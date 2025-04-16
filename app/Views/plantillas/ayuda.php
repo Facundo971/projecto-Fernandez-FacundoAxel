@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuda al Cliente</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-    <?php echo $this->include('plantillas/header')?>
-
-    <main class="row">
+<main>
+    <div class="row contenedor__div-ayuda">
         <div class="col-12">
             <h1 class="text-center mb-3">¿Con qué podemos ayudarte?</h1>
         </div>
@@ -66,28 +56,5 @@
                         <!-- <iframe src="https://www.google.com/maps/embed?..."></iframe> -->
             </div>
         </div>
-    </main>
-
-    <?php echo $this->include('plantillas/footer')?>
-
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        main{
-            background-color: #D3D3D3;
-
-            padding-top: 40px;
-            padding-left: 350px;
-            padding-right: 350px;
-            padding-bottom: 40px;
-            flex: 1;
-        }
-    </style>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+    </div>
+</main>

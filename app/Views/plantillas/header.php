@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $titulo;?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 <header class="bg-secondary">
-    <nav>
-        <div class="d-flex justify-content-between">
-            <div class="bg-danger contenedor__img">
-                <a href="#"><img src="assets/img/OIP.jpg" alt="Gato" width="70px" height="100%"></a>
+    <nav class="pt-1">
+        <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-center">
+                <a href="#"><img src="assets/img/Logo de la Empresa.jpg" alt="Logo" width="200px" height="80px"></a>
             </div>
 
             <?php echo $this->include('plantillas/search')?>
@@ -38,9 +48,6 @@
                             <a class="nav-link text-light item__li-a-1" href="#">Produstos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light item__li-a-1" href="#">Contactos</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-light item__li-a-1" href="#">Consultas</a>
                         </li>
                         <li class="nav-item">
@@ -52,26 +59,3 @@
         </div>
     </nav>
 </header>
-
-<style>
-    .contenedor__img{
-        margin-left: 100px;
-    }
-
-    .contenedor__nav{
-        height: 70px;
-
-        border: none;
-    }
-
-    .item__li-a-1:hover{
-        border: 1px solid blue !important;
-    }
-    .item__li-a-1:focus{
-        border: 1px solid blue !important;
-    }
-
-    .contenedor__nav-li-a-img-2{
-        filter: invert(88%) sepia(100%) saturate(1%) hue-rotate(77deg) brightness(105%) contrast(101%);
-    }
-</style>
