@@ -1,5 +1,5 @@
 main{
-    background-color: #D3D3D3;
+    background-color: blue;
 
     padding-top: 40px;
     padding-left: 120px;
@@ -58,13 +58,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 
 /* Footer */
-footer{
-    background-color:darkgray;
-
-    border: 1px solid black;
-}
-.container__footer-2, .container__footer-3{
-    border-bottom: 1px solid black;
+.conteiner__footer-img-1{
+    filter: invert(100%) sepia(1%) saturate(699%) hue-rotate(329deg) brightness(118%) contrast(101%);
 }
 
 
@@ -124,4 +119,14 @@ footer{
 
     position: relative;
     right: 2px;
+}
+
+
+
+/* Terminos y Usos */
+.conteiner__terminosUsos{
+    padding-top: 40px;
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-bottom: 40px;
 }

@@ -36,16 +36,18 @@
                             Categorias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Hogar</a></li>
+                            <li><a class="dropdown-item" href="#">Trabajo</a></li>
+                            <li><a class="dropdown-item" href="#">Educación</a></li>
+                            <li><a class="dropdown-item" href="#">Gaming</a></li>
+                            <li><a class="dropdown-item" href="#">Diseño y Edición Multimedia</a></li>
                         </ul>
                     </div>
                 </div>
                 <div>
                     <ul class="nav nav-tabs d-flex justify-content-end align-items-center contenedor__nav">
                         <li class="nav-item">
-                            <a class="nav-link text-light item__li-a-1" href="#">Produstos</a>
+                            <a class="nav-link text-light item__li-a-1" href="#">Productos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light item__li-a-1" href="#">Consultas</a>

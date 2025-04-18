@@ -140,7 +140,8 @@
                     <img src="assets/img/pago.svg" alt="Pago" width="80px" height="80px">
                 </div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, molestiae natus nisi quibusdam, officiis obcaecati laudantium accusamus dolores maxime reprehenderit dolor! Quisquam, optio. Ipsam ut dolore debitis quam nihil! Quae!</p>
+                    <h5>Elige como pagar</h5>
+                    <p class="ps-5 pe-5">Podés pagar con Tarjeta visa débito, Tarjeta mastercard débito, Tarjeta Naranja X y en efectivo.</p>
                 </div>
             </div>
             <div class="col">
@@ -148,7 +149,8 @@
                     <img src="assets/img/envio.svg" alt="Envio" width="80px" height="80px">
                 </div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, molestiae natus nisi quibusdam, officiis obcaecati laudantium accusamus dolores maxime reprehenderit dolor! Quisquam, optio. Ipsam ut dolore debitis quam nihil! Quae!</p>
+                    <h5>Envío gratis</h5>
+                    <p class="ps-5 pe-5">Solo por estar registrado en NetShop tenés envíos gratis de los productos que ofrecemos.</p>
                 </div>
             </div>
             <div class="col">
@@ -156,7 +158,8 @@
                     <img src="assets/img/seguridad.svg" alt="Seguridad" width="80px" height="80px">
                 </div>
                 <div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, molestiae natus nisi quibusdam, officiis obcaecati laudantium accusamus dolores maxime reprehenderit dolor! Quisquam, optio. Ipsam ut dolore debitis quam nihil! Quae!</p>
+                    <h5>Seguridad, de principio a fin</h5>
+                    <p class="ps-5 pe-5">En NetShop, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
                 </div>
             </div>
         </div>

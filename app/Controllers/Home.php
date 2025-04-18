@@ -55,11 +55,21 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    // public function comercializacion(){
-    //     return view('productos/consultas');
+    // public function quienesSomos(){
+    //     return view('productos/quienesSomos');
     // }
 
-    // public function terminoUso(){
-    //     return view('productos/inicioSesion');
-    // }
+    public function comercializacion(){
+        $data['titulo'] = 'Comercializacion';
+        echo view('plantillas/header', $data);
+        echo view('plantillas/comercializacion');
+        echo view('plantillas/footer');
+    }
+
+    public function terminosUsos(){
+        $data['titulo'] = 'Terminos y Uso';
+        echo view('plantillas/header', $data);
+        echo view('plantillas/terminosUsos');
+        echo view('plantillas/footer');
+    }
 }
