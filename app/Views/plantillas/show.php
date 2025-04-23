@@ -12,8 +12,8 @@
             <span class="fs-5 bg-success text-light ps-1 pe-1 container__div-span-2">%50 OFF</span>
             <p class="fs-3"><b>$50.000</b></p>
 
-            <button type="button" class="btn btn-primary w-100 mb-2">Ir a Comprar</button>
-            <button type="button" class="btn btn-success w-100 mb-3">Agregar al Carrito</button>
+            <button type="button" class="btn btn-primary w-100 mb-2">COMPRAR</button>
+            <button type="button" class="btn btn-success w-100 mb-3">Agregar a "Mi Carrito"</button>
         </div>
     </div>
     <div class="row bg-light pb-3 border-top">

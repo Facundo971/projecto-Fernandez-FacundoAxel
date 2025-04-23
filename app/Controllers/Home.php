@@ -6,7 +6,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        $data['titulo'] = 'Principal';
+        $data['titulo'] = 'NetShop | Principal';
         echo view('plantillas/header', $data);
         echo view('plantillas/carrusel');
         echo view('plantillas/index');
@@ -14,60 +14,63 @@ class Home extends BaseController
     }
 
     public function productos(){
-        $data['titulo'] = 'Productos';
+        $data['titulo'] = 'NetShop | Productos';
         echo view('plantillas/header', $data);
         echo view('plantillas/productos');
         echo view('plantillas/footer');
     }
 
     public function ayuda(){
-        $data['titulo'] = 'Ayuda';
+        $data['titulo'] = 'NetShop | Ayuda';
         echo view('plantillas/header', $data);
         echo view('plantillas/ayuda');
         echo view('plantillas/footer');
     }
 
     public function carrito(){
-        $data['titulo'] = 'Carrito';
+        $data['titulo'] = 'NetShop | Carrito';
         echo view('plantillas/header', $data);
         echo view('plantillas/carrito');
         echo view('plantillas/footer');
     }
 
     public function show(){
-        $data['titulo'] = 'Show';
+        $data['titulo'] = 'NetShop | Show';
         echo view('plantillas/header', $data);
         echo view('plantillas/show');
         echo view('plantillas/footer');
     }
 
     public function consultas(){
-        $data['titulo'] = 'Consultas';
+        $data['titulo'] = 'NetShop | Consultas';
         echo view('plantillas/header', $data);
         echo view('plantillas/consultas');
         echo view('plantillas/footer');
     }
 
     public function inicioSesion(){
-        $data['titulo'] = 'Inicio de Sesion';
+        $data['titulo'] = 'NetShop | Inicio de Sesion';
         echo view('plantillas/header', $data);
         echo view('plantillas/inicioSesion');
         echo view('plantillas/footer');
     }
 
-    // public function quienesSomos(){
-    //     return view('productos/quienesSomos');
-    // }
+    public function quienesSomos(){
+        $data['titulo'] = 'NetShop | Quienes Somos';
+        echo view('plantillas/header', $data);
+        echo view('plantillas/quienesSomos');
+        echo view('plantillas/footer');
+    }
 
     public function comercializacion(){
-        $data['titulo'] = 'Comercializacion';
+        $data['titulo'] = 'NetShop | Comercializacion';
         echo view('plantillas/header', $data);
         echo view('plantillas/comercializacion');
         echo view('plantillas/footer');
     }
 
     public function terminosUsos(){
-        $data['titulo'] = 'Terminos y Uso';
+        $data['titulo'] = 'NetShop | Terminos y Uso';
         echo view('plantillas/header', $data);
         echo view('plantillas/terminosUsos');
         echo view('plantillas/footer');

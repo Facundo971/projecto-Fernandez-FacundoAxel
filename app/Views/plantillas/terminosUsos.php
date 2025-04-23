@@ -2,7 +2,6 @@
     <div class="bg-light ms-5 me-5">
         <div>
             <h1 class="text-center mb-3 pt-2">Términos y Usos</h1>
-            <!-- <img src="assets/img/icons8-delivery-time-48.png" alt="Icono 1" width="60px" height="60px"> -->
         </div>
         <div class="border-bottom border-top pt-3">
             <p class="ps-2"><b>1. Uso del sitio web</b></p>
@@ -38,15 +37,8 @@
         <div class="border-bottom pt-3">
             <p class="ps-2"><b>5. Formas de entrega y tiempos</b></p>
             <ul class="ps-5">
-                <li>Tipos de envío disponibles (estándar, express, retiro en tienda).</li>
+                <li>Tipos de envío disponibles (domicilio y retiro en tienda).</li>
                 <li>Costos de envío y condiciones de envío gratuito.</li>
-            </ul>
-        </div>
-        <div class="border-bottom pt-3">
-            <p class="ps-2"><b>6. Devoluciones y cambios</b></p>
-            <ul class="ps-5">
-                <li>Condiciones para devolver un producto.</li>
-                <li>Procedimientos para gestionar devoluciones.</li>
             </ul>
         </div>
     </div>

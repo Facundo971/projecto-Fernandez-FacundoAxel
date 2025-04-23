@@ -1,17 +1,23 @@
-<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExample" class="carousel slide">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="assets/img/tonos-de-gris38.jpg" class="d-block" width="100%" height="340px" alt="Producto">
+            <img src="assets/img/Img para el carusel 4" class="d-block w-100" alt="Producto" height="400px">
         </div>
-        <div class="carousel-item active">
-            <img src="assets/img/tonos-de-gris38.jpg" class="d-block" width="100%" height="340px" alt="Producto">
+        <div class="carousel-item">
+            <img src="assets/img/Img para el carusel 2" class="d-block w-100" alt="Producto" height="400px">
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/Img para el carusel 5" class="d-block w-100" alt="Producto" height="400px">
+        </div>
+        <div class="carousel-item">
+            <img src="assets/img/Img para el carusel 1.jpg" class="d-block w-100" alt="Producto" height="400px">
         </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>

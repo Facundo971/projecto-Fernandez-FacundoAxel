@@ -1,4 +1,5 @@
 <main>
+    <h1 class="text-center mb-3">Nuestro Modelo de Comercialización</h1>
     <div class="row bg-light ms-5 me-5">
         <div class="col-12">
             <h1 class="text-center mb-3 pt-2">Tipos de Entregas</h1>
@@ -9,7 +10,7 @@
         </div>
 
         <div class="col-12">
-            <h1 class="text-center mb-3 pt-2">Forma de Envios</h1>
+            <h1 class="text-center mb-3 pt-2">Formas de Envio</h1>
         </div>
         <div class="col-12 border-bottom">
             <div class="row">
