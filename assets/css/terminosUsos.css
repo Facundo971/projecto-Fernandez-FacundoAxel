@@ -1,0 +1,83 @@
+/* Terminos y Usos */
+.conteiner__terminosUsos{
+    padding-top: 40px;
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-bottom: 40px;
+}
+
+
+
+/* Responsivo */
+@media(max-width:1366px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 320px;
+        padding-right: 320px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:1280px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 300px;
+        padding-right: 300px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:1140px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 240px;
+        padding-right: 240px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:1024px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 180px;
+        padding-right: 180px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:800px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 120px;
+        padding-right: 120px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:700px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:570px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:470px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 40px;
+    }
+} 
+@media(max-width:370px){
+    .conteiner__terminosUsos{
+        padding-top: 40px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 40px;
+    }
+} 

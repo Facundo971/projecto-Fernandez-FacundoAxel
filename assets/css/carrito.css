@@ -1,0 +1,12 @@
+/* Carrito */
+.conteiner__carrito-div{
+    height: 200px;
+}
+.conteiner__div-boton-carrito{
+    background-color: #871EE3;
+
+    padding: 7px;
+}
+.conteiner__div-boton-carrito:hover{
+    background-color: #871EE3;
+}

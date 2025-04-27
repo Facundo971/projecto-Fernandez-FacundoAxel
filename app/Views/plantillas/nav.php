@@ -1,0 +1,69 @@
+<div class="bg-white">
+    <nav class="pt-1">
+        <div class="row border-bottom ms-0 me-0">
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 ps-0 pe-0 d-flex justify-content-center">
+                <a href="<?php echo base_url('/'); ?>"><img src="assets/img/Logo de la Empresa.jpg" alt="Logo" width="200px" height="80px"></a>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 ps-0 pe-0 d-flex justify-content-center">
+                <?php echo $this->include('plantillas/search')?>
+            </div>
+
+            <ul class="col-xl-4 col-lg-4 col-md-4 col-sm-12 nav nav-tabs pe-0 d-flex justify-content-center align-items-center contenedor__nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark opacity-75" href="<?php echo base_url('inicioSesion'); ?>">Inicio de Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link item__li-a-1" href="<?php echo base_url('carrito'); ?>"><img src="assets/img/carro-vacio.png" alt="Carrito" width="20px" class="contenedor__nav-li-a-img-1"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar navbar-expand-lg navbar-dark border-bottom">
+            <div class="container-fluid d-flex justify-content-center contenedor__nav-div-2">
+                <div>
+                    <div class="dropdown d-flex align-items-center contenedor__a-categorias">
+                        <a class="btn item__li-a-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/img/hamburger.png" alt="Hamburguesa" width="12px" height="12px" class="me-0 mb-1 contenedor__nav-li-a-img-2">
+                            <b>Más Información</b>
+                        </a> 
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('quienesSomos'); ?>"><b>Quienes Somos</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('comercializacion'); ?>"><b>Comercializacion</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('terminosUsos'); ?>"><b>Términos y Usos</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('ayuda'); ?>"><b>Ayuda</b></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="dropdown d-flex align-items-center contenedor__a-categorias">
+                        <a class="btn item__li-a-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/img/hamburger.png" alt="Hamburguesa" width="12px" height="12px" class="me-0 mb-1 contenedor__nav-li-a-img-2">
+                            <b>Categorías</b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('productos'); ?>"><b>Hogar</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('productos'); ?>"><b>Trabajo</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('productos'); ?>"><b>Educación</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('productos'); ?>"><b>Gaming</b></a></li>
+                            <li><a class="dropdown-item item__li-a-3" href="<?php echo base_url('productos'); ?>"><b>Diseño y Edición Multimedia</b></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <ul class="nav nav-tabs d-flex justify-content-end align-items-center contenedor__nav">
+                        <li class="nav-item">
+                            <a class="nav-link item__li-a-1" href="<?php echo base_url('productos'); ?>"><b>Productos</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link item__li-a-1" href="<?php echo base_url('contacto'); ?>"><b>Contacto</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link item__li-a-1" href="<?php echo base_url('consultas'); ?>"><b>Consultas</b></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

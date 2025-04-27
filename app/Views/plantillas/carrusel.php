@@ -4,10 +4,10 @@
             <img src="assets/img/Img para el carusel 4" class="d-block w-100" alt="Producto" height="400px">
         </div>
         <div class="carousel-item">
-            <img src="assets/img/Img para el carusel 2" class="d-block w-100" alt="Producto" height="400px">
+            <img src="assets/img/Img para el carusel 2.png" class="d-block w-100" alt="Producto" height="400px">
         </div>
         <div class="carousel-item">
-            <img src="assets/img/Img para el carusel 5" class="d-block w-100" alt="Producto" height="400px">
+            <img src="assets/img/Img para el carusel 5.png" class="d-block w-100" alt="Producto" height="400px">
         </div>
         <div class="carousel-item">
             <img src="assets/img/Img para el carusel 1.jpg" class="d-block w-100" alt="Producto" height="400px">

@@ -1,0 +1,84 @@
+/* Inicio de Sesion */
+.conteiner__form-inicioSesion{
+    background-color: #D3D3D3;
+
+    padding-top: 40px;
+    padding-left: 350px;
+    padding-right: 350px;
+    padding-bottom: 40px;
+}
+.conteiner__form-div-input-ingresar{
+    font-weight: bold;
+
+    background-color: #871EE3;
+
+    padding: 7px;
+}
+
+
+
+/* Responsivo */
+@media(max-width:1366px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 340px;
+        padding-right: 340px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:1280px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 300px;
+        padding-right: 300px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:1140px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 240px;
+        padding-right: 240px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:1024px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 180px;
+        padding-right: 180px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:800px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 120px;
+        padding-right: 120px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:700px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:560px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:400px){
+    .conteiner__form-inicioSesion{
+        padding-top: 40px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 40px;
+    }
+} 

@@ -1,0 +1,70 @@
+/* Productos */
+.contenedor__productos{
+    background-color: #D3D3D3;
+
+    padding-top: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 40px;
+}
+.container__div-form-input-productos{
+    font-weight: bold;
+
+    background-color: #871EE3;
+}
+.contenedor__productos div div div div button{
+    color: #871ED9;
+
+    width: 158.4px;
+}
+.contenedor__productos div div div div button:hover,
+.contenedor__productos div div div div button:focus,
+.contenedor__productos div div div div button:active{
+    color: #871ED9 !important;
+    background-color: transparent !important;
+    border: 1px solid #e0e0e0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.contenedor__productos div div div div ul li a:hover,
+.contenedor__productos div div div div ul li a:focus,
+.contenedor__productos div div div div ul li a:active{
+    color: #871ED9 !important;
+    background-color: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+/* Responsivo */
+@media(max-width:767px){
+    .contenedor__productos{
+        padding-top: 40px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 40px;
+    }
+    .contenedor__productos div div a div div div span,
+    .contenedor__productos div div a div div div h4 span,
+    .contenedor__productos div div a div div div h4 b{
+        text-align: center;
+        display: block;
+    }
+}
+@media(max-width:440px){
+    .contenedor__productos{
+        padding-top: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:360px){
+    .contenedor__productos{
+        padding-top: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 40px;
+    }
+}
