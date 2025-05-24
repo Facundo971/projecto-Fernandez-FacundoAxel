@@ -54,6 +54,14 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
+    public function registrarse(){
+        $data['titulo'] = 'NetShop | Registro';
+        echo view('plantillas/header', $data);
+        echo view('plantillas/nav');
+        echo view('back/usuario/registrarse');
+        echo view('plantillas/footer');
+    }
+
     public function inicioSesion(){
         $data['titulo'] = 'NetShop | Inicio de Sesion';
         echo view('plantillas/header', $data);
@@ -83,6 +91,14 @@ class Home extends BaseController
         echo view('plantillas/header', $data);
         echo view('plantillas/nav');
         echo view('plantillas/terminosUsos');
+        echo view('plantillas/footer');
+    }
+
+    public function listaProductos(){
+        $data['titulo'] = 'Dasboard | Lista de Productos';
+        echo view('plantillas/header', $data);
+        echo view('plantillas/nav');
+        echo view('plantillas/listaProductos');
         echo view('plantillas/footer');
     }
 }

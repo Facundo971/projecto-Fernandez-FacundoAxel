@@ -1,4 +1,11 @@
+<?php 
+    $sesion = session();
+    $nombre = $sesion->get('nombre');
+    $perfil = $sesion->get('perfil_id');
+?>
+
 <footer class="border">
+    <?php if($perfil == 2 || $perfil != 1): ?>
     <div class="container text-center pb-2 border-bottom">
         <div class="row ps-5 pe-5 pt-2">
             <div class="col-xl-3 col-lg-12 col-md-12 d-flex justify-content-center">
@@ -70,6 +77,7 @@
     </div>
 
     <p class="text-center opacity-75 pt-3">&copy; 2025 NetShop | Todos los derechos reservados | País: Argentina | Provincia: Corrientes | Localidad: Corrientes Capital</p>
+    <?php endif; ?>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </footer>
 </body>
