@@ -45,11 +45,16 @@
         padding-right: 50px;
         padding-bottom: 40px;
     }
-    .contenedor__productos div div a div div div span,
-    .contenedor__productos div div a div div div h4 span,
-    .contenedor__productos div div a div div div h4 b{
+    .contenedor__productos div div div div div span,
+    .contenedor__productos div div div div div h4 span,
+    .contenedor__productos div div div div div h4 b{
         text-align: center;
         display: block;
+    }
+    .contenedor__productos div div div div,
+    .contenedor__productos div div div div ul,
+    .contenedor__productos div div div div button{
+        width: 100%;
     }
 }
 @media(max-width:440px){
@@ -66,5 +71,11 @@
         padding-left: 16px;
         padding-right: 16px;
         padding-bottom: 40px;
+    }
+}
+
+@media(max-width:340px){
+    .contenedor__productos div div div div div form input{
+        font-size: 14px;
     }
 }

@@ -1,4 +1,4 @@
-<main>
+<main class="contenedor__comercializacion">
     <div class="bg-light rounded-2 pt-3">
         <h1 class="text-center mb-3 pt-2 pb-4 border-bottom">Conoce Nuestro Modelo de Comercialización</h1>
         <div class="row ms-5 me-5">

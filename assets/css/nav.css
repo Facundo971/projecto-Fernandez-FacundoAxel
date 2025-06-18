@@ -63,7 +63,7 @@
         width: 50%;
     }
 }
-@media (max-width: 340px){
+@media (max-width: 391px){
     .contenedor__nav-div-2 div{
         width: 100%;
     }

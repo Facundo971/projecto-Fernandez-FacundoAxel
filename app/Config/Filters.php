@@ -37,6 +37,7 @@ class Filters extends BaseFilters
         'auth'          => \App\Filters\Auth::class,
         'adminAuth'     => \App\Filters\AdminAuth::class,
         'usuarioAuth'   => \App\Filters\UsuarioAuth::class,
+        'carritoAuth'   => \App\Filters\CarritoAuth::class,
     ];
 
     /**

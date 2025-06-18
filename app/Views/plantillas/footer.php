@@ -9,7 +9,7 @@
     <div class="container text-center pb-2 border-bottom">
         <div class="row ps-5 pe-5 pt-2">
             <div class="col-xl-3 col-lg-12 col-md-12 d-flex justify-content-center">
-                <a href="<?php echo base_url('/'); ?>"><img src="assets/img/Logo de la Empresa.jpg" alt="Logo" width="260px" height="144px"></a>
+                <a href="<?php echo base_url('/'); ?>"><img src="<?= base_url('assets/img/LogodelaEmpresa.jpg'); ?>" alt="Logo" width="260px" height="144px"></a>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <p class="text-center"><b>Atención al cliente:</b><br><span class="opacity-75">+54 9 3794 04 6207<br>+54 9 3794 91 6905</span></p>
@@ -23,13 +23,13 @@
                 </div>
                 <div class="row d-flex justify-content-center"><br>
                     <div class="col-3 bg-dark-subtle ms-4 me-4 rounded-4 d-flex justify-content-center" style="width: 34px;">
-                        <a href="https://www.facebook.com/profile.php?id=61575442171552" target="_blank"><img src="assets/img/icons8-facebook-30.png" alt="Facebook" width="34px" class="p-1 conteiner__footer-img-1"></a>
+                        <a href="https://www.facebook.com/profile.php?id=61575442171552" target="_blank"><img src="<?= base_url('assets/img/icons8-facebook-30.png'); ?>" alt="Facebook" width="34px" class="p-1 conteiner__footer-img-1"></a>
                     </div>
                     <div class="col-3 bg-dark-subtle ms-4 me-4 rounded-4 d-flex justify-content-center" style="width: 34px;">
-                        <a href="https://www.instagram.com/netshop793/" target="_blank"><img src="assets/img/icons8-instagram-50.png" alt="Instagram" width="34px" class="p-1 conteiner__footer-img-1"></a>
+                        <a href="https://www.instagram.com/netshop793/" target="_blank"><img src="<?= base_url('assets/img/icons8-instagram-50.png'); ?>" alt="Instagram" width="34px" class="p-1 conteiner__footer-img-1"></a>
                     </div>
                     <div class="col-3 bg-dark-subtle ms-4 me-4 rounded-4 d-flex justify-content-center" style="width: 34px;">
-                        <a href="https://x.com/NetShop146710" target="_blank"><img src="assets/img/icons8-x-30.png" alt="X" width="34px" class="p-1 conteiner__footer-img-1"></a>
+                        <a href="https://x.com/NetShop146710" target="_blank"><img src="<?= base_url('assets/img/icons8-x-30.png'); ?>" alt="X" width="34px" class="p-1 conteiner__footer-img-1"></a>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
 
     <p class="text-center opacity-75 pt-3">&copy; 2025 NetShop | Todos los derechos reservados | País: Argentina | Provincia: Corrientes | Localidad: Corrientes Capital</p>
     <?php endif; ?>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
 </footer>
 </body>
 </html>
