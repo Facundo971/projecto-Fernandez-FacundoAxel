@@ -1282,7 +1282,7 @@ main div div div div div a{
     }
 }
 @media(max-width:600px){
-    .conteiner__listaDeCategorias{
+    .conteiner__listaDePerfiles{
         padding-top: 40px;
         padding-left: 10px;
         padding-right: 10px;
@@ -1389,12 +1389,6 @@ main div div div div div a{
     padding-right: 120px;
     padding-bottom: 40px;
 }
-.conteiner__listaDeVentasRealizada div div button{
-    background-color: #871EE3;
-}
-.conteiner__listaDeVentasRealizada div div button:hover{
-    background-color: #871EE3;
-}
 /* Responsivo */
 @media(max-width:1224px){
     .conteiner__listaDeVentas{
@@ -1416,6 +1410,51 @@ main div div div div div a{
         overflow-x: auto !important;
     }
     .listaDeVentas-scroll .row {
+        flex-wrap: nowrap !important;
+        min-width: 600px !important;
+    }
+}
+
+
+
+/* Seccion de Detalle de Venta (Admin) */
+.conteiner__listaDeVentaDetalleCompraRealizada{
+    background-color: #D3D3D3;
+
+    min-height: 81vh;
+
+    padding-top: 40px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 40px;
+}
+.conteiner__listaDeVentaDetalleCompraRealizada div div button{
+    background-color: #871EE3;
+}
+.conteiner__listaDeVentaDetalleCompraRealizada div div button:hover{
+    background-color: #791AD1;
+}
+/* Responsivo */
+@media(max-width:1224px){
+    .conteiner__listaDeVentaDetalleCompraRealizada{
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+    }
+}
+@media(max-width:670px){
+    .conteiner__listaDeVentaDetalleCompraRealizada{
+        padding-top: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 40px;
+    }
+    .listaDeVentaDetalleCompraRealizada-scroll {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+    }
+    .listaDeVentaDetalleCompraRealizada-scroll .row {
         flex-wrap: nowrap !important;
         min-width: 600px !important;
     }

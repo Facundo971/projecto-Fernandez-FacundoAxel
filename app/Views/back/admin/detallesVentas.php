@@ -1,33 +1,29 @@
-<main class="conteiner__listaDeVentasRealizada">
+<main class="conteiner__listaDeVentaDetalleCompraRealizada">
     <div class="bg-white rounded-2">
-        <h1 class="text-center mb-3 pt-2">Detalle de la Compra</h1>
-        <div class="text-end me-2">
+        <h1 class="text-center pt-2">Detalle de la Compra</h1>
+        <div class="text-end pb-2 pe-2">
             <button id="btnImprimir" class="p-2 border-0 rounded-2"><b class="text-white bg-opacity-75">Imprimir Detalle</b></button>
         </div>
-        <div class="contenedor__tablaDetallesCompraRealizada mt-2">
-            <div class="row border-top">
-                <div class="col-1 pe-0 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
-                    <p class="mb-0"><b>Numero</b></p>
-                </div>
-                <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+        <div class="listaDeVentaDetalleCompraRealizada-scroll mt-2">
+            <div class="row w-100 ms-0 border-top">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
                     <p class="mb-0"><b>Producto</b></p>
                 </div>
-                <div class="col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
                     <p class="mb-0"><b>Descripción</b></p>
                 </div>
-                <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
                     <p class="mb-0"><b>Cantidad</b></p>
                 </div>
-                <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
                     <p class="mb-0"><b>Precio</b></p>
                 </div>
-                <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 text-center border-end">
                     <p class="mb-0"><b>Subtotal</b></p>
                 </div>
             </div>
             <?php 
                 $acumulado = 0;
-                $numero = 0;
             ?>        
             <?php foreach($detalles as $detalle): ?>
                 <?php 
@@ -41,28 +37,25 @@
                     $subtotal = $detalle['cantidad'] * $productoEncontrado['precio_vta'];
                     $acumulado += $subtotal;
                 ?>
-                <div class="row border-top">
-                    <div class="col-1 pe-0 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
-                        <p class="mb-0"><?= ++$numero ?></p>
-                    </div>
-                    <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                <div class="row w-100 ms-0 border-top">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pb-3 pt-3 border-end d-flex justify-content-center">
                         <p class="mb-0"><?= isset($productoEncontrado) ? esc($productoEncontrado['nombre_producto']) : 'Producto no encontrado' ?></p>
                     </div>
-                    <div class="col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
                         <p class="mb-0"><?= isset($productoEncontrado) ? esc($productoEncontrado['descripcion']) : '' ?></p>
                     </div>
-                    <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 border-end d-flex justify-content-center">
                         <p class="mb-0"><?= esc($detalle['cantidad']) ?></p>
                     </div>
-                    <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 border-end d-flex justify-content-center">
                         <p class="mb-0">$<?= number_format($productoEncontrado['precio_vta'], 2) ?></p>
                     </div>
-                    <div class="col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
+                    <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 text-center border-end">
                         <p class="mb-0">$<?= number_format($subtotal, 2) ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>
-            <div class="row border-top">
+            <div class="row w-100 ms-0 border-top">
                 <div class="col-10 pb-3 pt-3 border-end d-flex justify-content-end align-items-center">
                     <p class="mb-0"><strong>Total</strong></p>
                 </div>

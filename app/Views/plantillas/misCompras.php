@@ -29,11 +29,11 @@
             <form class="w-100" action="<?php echo base_url('enviar-formFechaQuery20'); ?>" method="POST">
                 <div class="mb-2">
                     <p class="mb-0"><b>Buscar desde: </b></p>
-                    <input type="search" name="fechaInicioQuery20" placeholder="Escribe la fecha de inicio de la venta que quieres buscar..." value="<?= $valorFechaInicioQuery20; ?>" class="w-100 p-2 border shadow">
+                    <input type="search" name="fechaInicioQuery20" placeholder="Escribe la fecha de inicio de la venta que quieres buscar..." value="<?= $valorFechaInicioQuery20; ?>" title="(por ejemplo: 2025-06-01)" class="w-100 p-2 border shadow">
                 </div>
                 <div class="mb-2">
                     <p class="mb-0"><b>Buscar hasta: </b></p>
-                    <input type="search" name="fechaFinQuery20" placeholder="Escribe la fecha de fin de la venta que quieres buscar..." value="<?= $valorFechaFinQuery20; ?>" class="w-100 p-2 border shadow">
+                    <input type="search" name="fechaFinQuery20" placeholder="Escribe la fecha de fin de la venta que quieres buscar..." value="<?= $valorFechaFinQuery20; ?>" title="(por ejemplo: 2025-06-06)" class="w-100 p-2 border shadow">
                 </div>
                 <div class="w-100 d-flex justify-content-center align-items-center">
                     <button class="text-white w-25 mt-2 mb-3 p-2 border btn"><b>Buscar</b></button>

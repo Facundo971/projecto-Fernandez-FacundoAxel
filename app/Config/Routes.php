@@ -5,12 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-// 1-EL NOMBRE DE LAS PESTALLAS QUE DICE NETSHOP CAMBIARLO A DASHBOARD O OTRO NOMBRE, X (Fijarse cuando agrego)
-// 2-FIJARSE EN LOS NOMBRES DE LAS CLASES DE LOS ESTILOS
-// 3-QUITAR LOS COMENTARIOS DE TODOS LOS ARCHIVOS
-// 4-FIJARSE SI ESTA TODO RESPONSIVO
-
-// VISTA DEL CLIENTE O USUARIO
+// VISTA DEL CLIENTE o USUARIO
 $routes->get('/', 'Home::index', ['filter' => 'adminAuth']);
 $routes->get('/productos', 'Home::productos', ['filter' => 'adminAuth']);
 $routes->get('/categoria/(:num)', 'Home::categorias/$1', ['filter' => 'adminAuth']);
