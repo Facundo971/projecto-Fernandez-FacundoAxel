@@ -56,8 +56,7 @@
                     <div class="text-center">
                         <img src="<?= base_url('assets/img/Producto no disponible.png'); ?>" alt="Producto no agregado" width="140px">
                     </div>
-                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que aún no se han desactivado ningún producto</b></h4>
-                    <p class="text-center opacity-75 ps-4 pe-4">Para poder visualizarlas, desactívalas en la sección de "Actualizar o Eliminar"</p>
+                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que no hay productos desactivados</b></h4>
                 </div>
             <?php else: ?>
                 <?php foreach($productos as $producto): ?>
@@ -79,7 +78,7 @@
                                 <img src="<?= base_url('assets/uploads/' . $producto['imagen']); ?>" alt="Imagen del producto" width="100px" height="100px">
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
-                                <p class="mb-0"><?php echo $producto['precio_vta']; ?></p>
+                                <p class="mb-0">$<?php echo number_format($producto['precio_vta'], 2, ',', '.'); ?></p>
                             </div>
                         </div>
                     <?php endif; ?>

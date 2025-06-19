@@ -40,8 +40,7 @@
                     <div class="text-center">
                         <img src="<?= base_url('assets/img/Marca no agregada.png'); ?>" alt="Marca no agregada" width="140px">
                     </div>
-                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que aún no se ha activado ninguna marca</b></h4>
-                    <p class="text-center opacity-75 ps-4 pe-4">Para poder visualizarlas, actívalas en la sección de "Actualizar o Eliminar"</p>
+                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que no hay marcas registradas</b></h4>
                 </div>
             <?php else: ?>
                 <?php foreach($marcas as $marca): ?>

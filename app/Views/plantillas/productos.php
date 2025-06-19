@@ -82,15 +82,15 @@
                                     <h5 class="card-title text-dark"><b><?php echo $producto['nombre_producto']; ?></b></h5>
                                     <p class="card-text text-dark opacity-75"><?php echo $producto['descripcion']; ?></p>
                                     <?php if($producto['precio'] > $producto['precio_vta']): ?>
-                                        <span class="text-decoration-line-through text-decoration-none text-dark text-opacity-75">$<?php echo $producto['precio']; ?></span>
+                                        <span class="text-decoration-line-through text-decoration-none text-dark text-opacity-75">$<?php echo number_format($producto['precio'], 2); ?></span>
                                         <h4 class="text-dark">
-                                            <b>$<?php echo $producto['precio_vta']; ?></b>
+                                            <b>$<?php echo number_format($producto['precio_vta'], 2); ?></b>
                                             <span class="fs-5 text-white ps-1 pe-1 border border-0 rounded-1 contenedor__div-span-oferta">
                                                 <b>%<?= round((($producto['precio'] - $producto['precio_vta']) / $producto['precio']) * 100); ?> OFF</b>
                                             </span>
                                         </h4>
                                     <?php else: ?>
-                                        <h4 class="text-dark"><b>$<?php echo $producto['precio_vta']; ?></b></h4>
+                                        <h4 class="text-dark"><b>$<?php echo number_format($producto['precio_vta'], 2); ?></b></h4>
                                     <?php endif; ?>
                                 <?php if($producto['stock'] > 0): ?>
                                     <?php if($producto['stock'] >= $producto['stock_min']): ?>
@@ -114,40 +114,6 @@
                         </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
-
-                <!-- <a href="#" class="text-decoration-none pt-2 pb-2 border-bottom">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <img src="assets/img/Notebook Apple 2.webp" class="img-fluid rounded-start" width="100%" alt="Producto">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-dark"><b>APPLE</b></h5>
-                                <p class="card-text text-dark opacity-75">MacBook Air M2 (2022) 13.6" color silver 8GB de Ram - 256GB SSD - Ryzen 7 - Apple M</p>
-                                <span class="text-decoration-line-through text-decoration-none text-dark text-opacity-75">$1.755.434</span>
-                                <h4 class="text-dark">
-                                    <b>$1.439.455</b>
-                                    <span class="fs-5 text-white ms-2 ps-1 pe-1 border border-0 rounded-1 contenedor__div-span-oferta"><b>%18 OFF</b></span>
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                </a> -->
-
-                <!-- <a href="#" class="text-decoration-none pt-2 pb-2 border-bottom">
-                    <div class="row g-0">
-                        <div class="col-md-4 d-flex justify-content-center align-items-center">
-                            <img src="assets/img/Notebook Samsusg 1.webp" class="img-fluid rounded-start" width="100%" alt="Producto">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title text-dark"><b>SAMSUNG</b></h5>
-                                <p class="card-text text-dark opacity-75">Samsung Galaxy Book 4 15.6" Color Plateado 16GB RAM 512GB SSD Procesador Intel Core I7</p>
-                                <h4 class="text-dark"><b>$2.169.999</b></h4>
-                            </div>
-                        </div>
-                    </div>
-                </a> -->
             </div>
         </div>
     <?php endif; ?>

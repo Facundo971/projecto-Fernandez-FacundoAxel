@@ -47,7 +47,7 @@
                         <div class="card-body pt-2">
                             <h5 class="card-title text-dark"><b><?= $item['name']; ?></b></h5>
                             <p class="card-text text-dark opacity-75"><?= $item['options']['descripcion'] ?? '' ?></p>
-                            <h4 class="text-dark text-xl-start text-lg-start text-md-center text-sm-center text-center"><b><?= number_format($item['price'], 2) ?></b></h4>
+                            <h4 class="text-dark text-xl-start text-lg-start text-md-center text-sm-center text-center"><b>$<?= number_format($item['price'], 2) ?></b></h4>
                             <div class="text-xl-start text-lg-start text-md-center text-sm-center text-center">
                                 <a href="<?= base_url('suma-carrito/' . $item['rowid']) ?>" class="text-decoration-none text-white rounded-1 pt-1 pb-1"><b>+</b></a>
                                 <?= number_format($item['qty']) ?>

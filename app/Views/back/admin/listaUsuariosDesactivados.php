@@ -50,8 +50,7 @@
                     <div class="text-center">
                         <img src="<?= base_url('assets/img/Perfil no agregado.png'); ?>" alt="Usuario no agregado" width="140px">
                     </div>
-                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que no hay ningún usuario desactivado</b></h4>
-                    <p class="text-center opacity-75 ps-4 pe-4">Para poder visualizarlas, desactívalos en la sección de "Actualizar o Eliminar"</p>
+                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que no hay usuarios dado de baja</b></h4>
                 </div>
             <?php else: ?>
                 <?php foreach($usuarios as $usuario): ?>

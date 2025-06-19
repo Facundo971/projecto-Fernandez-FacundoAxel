@@ -122,6 +122,9 @@ input, textarea{
     .contenedor__nav-div-2 div ul li{
         width: 100%;
     }
+    .contenedor__a-categorias ul{
+        width: 100%;
+    }
 }
 
 
@@ -169,8 +172,16 @@ input, textarea{
 .contenedor__div-p-descripcion{
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+.contenedor__div-index div div div div h5{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
 }
@@ -809,6 +820,12 @@ main div div div div div a{
         padding-right: 40px;
         padding-bottom: 40px;
     }
+    .conteiner__form-div-input-registrarseCancelar{
+        font-size: 14px;
+    }
+    .conteiner__form-registrarse div form div a{
+        font-size: 14px;
+    }
 }
 @media(max-width:400px){
     .conteiner__form-inicioSesion{
@@ -817,6 +834,12 @@ main div div div div div a{
         padding-right: 12px;
         padding-bottom: 40px;
     }
+    .conteiner__form-div-input-registrarseCancelar{
+        font-size: 12px;
+    }
+    .conteiner__form-registrarse div form div a{
+        font-size: 12px;
+    }
 }
 
 
@@ -824,6 +847,8 @@ main div div div div div a{
 /* Seccion de Alta de Categorias (Admin) */
 .conteiner__form-altaDeCategorias{
     background-color: #D3D3D3;
+
+    min-height: 81vh;
 
     padding-top: 40px;
     padding-left: 350px;
@@ -912,6 +937,8 @@ main div div div div div a{
 .conteiner__form-altaDeMarcas{
     background-color: #D3D3D3;
 
+    min-height: 81vh;
+
     padding-top: 40px;
     padding-left: 350px;
     padding-right: 350px;
@@ -996,6 +1023,8 @@ main div div div div div a{
 /* Seccion de Alta de Perfiles (Admin) */
 .conteiner__form-altaDePerfiles{
     background-color: #D3D3D3;
+
+    min-height: 81vh;
 
     padding-top: 40px;
     padding-left: 350px;
@@ -1158,6 +1187,8 @@ main div div div div div a{
 .conteiner__listaDeProductos{
     background-color: #D3D3D3;
 
+    min-height: 81vh;
+
     padding-top: 40px;
     padding-left: 120px;
     padding-right: 120px;
@@ -1194,6 +1225,8 @@ main div div div div div a{
 /* Seccion de Lista de Usuarios (Admin) */
 .conteiner__listaDeUsuarios{
     background-color: #D3D3D3;
+
+    min-height: 81vh;
 
     padding-top: 40px;
     padding-left: 120px;
@@ -1232,6 +1265,8 @@ main div div div div div a{
 .conteiner__listaDePerfiles{
     background-color: #D3D3D3;
 
+    min-height: 81vh;
+
     padding-top: 40px;
     padding-left: 120px;
     padding-right: 120px;
@@ -1268,6 +1303,8 @@ main div div div div div a{
 /* Seccion de Lista de Categorias (Admin) */
 .conteiner__listaDeCategorias{
     background-color: #D3D3D3;
+
+    min-height: 81vh;
 
     padding-top: 40px;
     padding-left: 120px;
@@ -1306,6 +1343,8 @@ main div div div div div a{
 .conteiner__listaDeMarcas{
     background-color: #D3D3D3;
 
+    min-height: 81vh;
+
     padding-top: 40px;
     padding-left: 120px;
     padding-right: 120px;
@@ -1342,6 +1381,8 @@ main div div div div div a{
 /* Seccion de Lista de Ventas (Admin) */
 .conteiner__listaDeVentas{
     background-color: #D3D3D3;
+
+    min-height: 81vh;
 
     padding-top: 40px;
     padding-left: 120px;
@@ -1385,6 +1426,8 @@ main div div div div div a{
 /* Seccion de Lista de Consultas (Admin) */
 .conteiner__listaDeConsultas{
     background-color: #D3D3D3;
+
+    min-height: 81vh;
 
     padding-top: 40px;
     padding-left: 120px;

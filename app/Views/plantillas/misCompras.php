@@ -60,7 +60,7 @@
                                 <tr>
                                     <td class="text-center"><?= $usuario['nombre'] ?>, <?= $usuario['apellido'] ?></td>
                                     <td class="text-center"><?= $venta['fecha'] ?></td>
-                                    <td class="text-center"><?= number_format($venta['total_venta'], 2) ?></td>
+                                    <td class="text-center">$<?= number_format($venta['total_venta'], 2) ?></td>
                                     <td class="text-center">
                                         <div class="text-center">
                                             <a href="<?= base_url('vistaDetalleCompra/' . $venta['id']) ?>" class="text-decoration-none">

@@ -199,7 +199,7 @@ class Producto_controller extends Controller{
         $productoStockMin = $this->request->getVar('stockMin');
 
         $input = $this->validate([
-            'nombre'    => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
+            'nombre'    => 'required|trim|min_length[2]|max_length[50]',
             'categoria' => 'required',
             'marca'     => 'required',
             'precio'    => 'required|trim|numeric|greater_than[0]',
@@ -258,7 +258,7 @@ class Producto_controller extends Controller{
     public function formValidationUpdate(){
         $input = $this->validate([
             'id'        => 'required|numeric',
-            'nombre'    => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
+            'nombre'    => 'required|trim|min_length[2]|max_length[50]',
             'categoria' => 'required',
             'precio'    => 'required|trim|numeric|greater_than[0]',
             'precioVta' => 'required|trim|numeric|greater_than[0]',

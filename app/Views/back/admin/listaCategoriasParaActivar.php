@@ -37,8 +37,7 @@
                     <div class="text-center">
                         <img src="<?= base_url('assets/img/Categoria no agregada.png'); ?>" alt="Categoria no agregada" width="140px">
                     </div>
-                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que aún no se ha desactivado ninguna categoría</b></h4>
-                    <p class="text-center opacity-75 ps-4 pe-4">Para poder visualizarlas, desactívalas en la sección de "Actualizar o Eliminar"</p>
+                    <h4 class="text-center ps-4 pe-4"><b>Ups, parece que no hay categorias desactivadas</b></h4>
                 </div>
             <?php else: ?>
                 <?php foreach($categorias as $categoria): ?>

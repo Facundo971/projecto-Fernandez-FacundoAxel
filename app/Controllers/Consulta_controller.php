@@ -73,7 +73,7 @@ class Consulta_controller extends Controller{
             'apellido' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'dni' => 'required|trim|max_length[8]|is_natural|',
             'telefono' => 'required|trim|max_length[10]|is_natural',
-            'email' => 'required|trim|valid_email|max_length[320]',
+            'email' => 'required|trim|valid_email|regex_match[/^[\w\.\-]+@[\w\-]+\.(com)$/]',
             'consulta' => 'required|trim|min_length[2]|max_length[500]'
         ]);
 

@@ -24,7 +24,7 @@
             </div>
 
             <div class="mt-3 d-flex justify-content-center"> 
-                <input type="submit" value="Actualizar" class="text-white w-25 rounded-2 conteiner__form-div-input-agregarCancelar">
+                <input type="submit" value="Editar" class="text-white w-25 rounded-2 conteiner__form-div-input-agregarCancelar">
                 <a href= "<?php echo base_url('limpiarPerfilAct/' . $perfil['id_perfil']); ?>" class="w-25 ms-3 btn btn-danger text-white rounded-2"><b>Borrar</b></a>
             </div>
         </form>

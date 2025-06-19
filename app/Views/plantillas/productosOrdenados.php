@@ -82,15 +82,15 @@
                                     <h5 class="card-title text-dark"><b><?php echo $producto['nombre_producto']; ?></b></h5>
                                     <p class="card-text text-dark opacity-75"><?php echo $producto['descripcion']; ?></p>
                                     <?php if($producto['precio'] > $producto['precio_vta']): ?>
-                                        <span class="text-decoration-line-through text-decoration-none text-dark text-opacity-75">$<?php echo $producto['precio']; ?></span>
+                                        <span class="text-decoration-line-through text-decoration-none text-dark text-opacity-75">$<?php echo number_format($producto['precio'], 2); ?></span>
                                         <h4 class="text-dark">
-                                            <b>$<?php echo $producto['precio_vta']; ?></b>
+                                            <b>$<?php echo number_format($producto['precio_vta'], 2); ?></b>
                                             <span class="fs-5 text-white ps-1 pe-1 border border-0 rounded-1 contenedor__div-span-oferta">
                                                 <b>%<?= round((($producto['precio'] - $producto['precio_vta']) / $producto['precio']) * 100); ?> OFF</b>
                                             </span>
                                         </h4>
                                     <?php else: ?>
-                                        <h4 class="text-dark"><b>$<?php echo $producto['precio_vta']; ?></b></h4>
+                                        <h4 class="text-dark"><b>$<?php echo number_format($producto['precio_vta'], 2); ?></b></h4>
                                     <?php endif; ?>
                                 <?php if($producto['stock'] > 0): ?>
                                     <?php if($producto['stock'] >= $producto['stock_min']): ?>

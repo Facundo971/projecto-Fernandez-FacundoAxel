@@ -208,8 +208,8 @@ class Usuario_controller extends Controller{
             'nombre' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'apellido' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'usuario' => 'required|trim|min_length[4]|max_length[20]|is_unique[usuarios.usuario]',
-            'email' => 'required|trim|valid_email|is_unique[usuarios.email]',
-            'contraseña' => 'required|trim|min_length[8]|max_length[255]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]'
+            'email' => 'required|trim|valid_email|regex_match[/^[\w\.\-]+@[\w\-]+\.(com)$/]|is_unique[usuarios.email]',
+            'contraseña' => 'required|trim|min_length[8]|max_length[20]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]'
         ]);
 
         $formModel = new Usuarios_model();
@@ -254,8 +254,8 @@ class Usuario_controller extends Controller{
             'nombre' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'apellido' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'usuario' => 'required|trim|min_length[4]|max_length[20]|is_unique[usuarios.usuario]',
-            'email' => 'required|trim|valid_email|is_unique[usuarios.email]',
-            'contraseña' => 'required|trim|min_length[8]|max_length[255]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]',
+            'email' => 'required|trim|valid_email|regex_match[/^[\w\.\-]+@[\w\-]+\.(com)$/]|is_unique[usuarios.email]',
+            'contraseña' => 'required|trim|min_length[8]|max_length[20]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]',
             'perfil' => 'required'
         ]);
 
@@ -301,8 +301,8 @@ class Usuario_controller extends Controller{
             'nombre' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'apellido' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'usuario' => 'required|trim|min_length[4]|max_length[20]|is_unique[usuarios.usuario,id_usuario,' . $id . ']',
-            'email' => 'required|trim|valid_email|is_unique[usuarios.email,id_usuario,' . $id . ']',
-            'contraseña' => 'trim|permit_empty|min_length[8]|max_length[255]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]',
+            'email' => 'required|trim|valid_email|regex_match[/^[\w\.\-]+@[\w\-]+\.(com)$/]|is_unique[usuarios.email,id_usuario,' . $id . ']',
+            'contraseña' => 'trim|permit_empty|min_length[8]|max_length[20]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]',
             'perfil' => 'required',
         ]);
         if(!$input){
