@@ -11,9 +11,9 @@
 
 <main class="conteiner__listaDeMarcas">
     <div class="bg-white rounded-2">
-        <h1 class="text-center pt-2">Lista de Marcas Desactivados</h1>
+        <h1 class="text-center pt-2">Lista de Marcas Desactivadas</h1>
         <div class="d-flex justify-content-end pb-2 pe-2">
-            <a href= "<?php echo base_url('mostrarListaMarcas'); ?>" class="btn btn-primary text-white rounded-2"><b>Volver</b></a>
+            <a href= "<?php echo base_url('mostrarListaMarcas'); ?>" class="btn btn-secondary text-white rounded-2"><b>Volver</b></a>
         </div>
         <div>
             <div class="row w-100 ms-0 border-top">

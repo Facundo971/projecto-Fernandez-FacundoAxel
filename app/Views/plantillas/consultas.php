@@ -26,7 +26,7 @@
                     <label for="nombre"><b>Nombre Completo</b></label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre..." value="<?= esc($valorConsultaNombre); ?>" title="El nombre solo debe contener letras y espacios" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre..." value="<?= esc($valorConsultaNombre); ?>" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('nombre')) {?>
                     <div class="text-center mt-2"> 
@@ -39,7 +39,7 @@
                     <label for="apellido"><b>Apellido Completo</b></label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido..." value="<?= esc($valorConsultaApellido); ?>" title="El apellido solo debe contener letras y espacios" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido..." value="<?= esc($valorConsultaApellido); ?>" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('apellido')) {?>
                     <div class="text-center mt-2"> 
@@ -52,7 +52,7 @@
                     <label for="dni"><b>DNI</b></label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <input type="number" name="dni" id="dni" placeholder="Ingrese su dni..." value="<?= esc($valorConsultaDni); ?>" title="El DNI debe contener exactamente 8 dígitos" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="number" name="dni" id="dni" placeholder="Ingrese su dni..." value="<?= esc($valorConsultaDni); ?>" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('dni')) {?>
                     <div class="text-center mt-2"> 
@@ -65,7 +65,7 @@
                     <label for="telefono"><b>Teléfono</b></label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <input type="number" name="telefono" id="telefono" placeholder="Ingrese su numero telefónico..." value="<?= esc($valorConsultaTelefono); ?>" title="El teléfono debe contener entre 10 y 15 dígitos" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="number" name="telefono" id="telefono" placeholder="Ingrese su numero telefónico..." value="<?= esc($valorConsultaTelefono); ?>" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('telefono')) {?>
                     <div class="text-center mt-2"> 
@@ -91,7 +91,7 @@
                     <label for="consulta"><b>Consulta</b></label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <textarea name="consulta" id="consulta" placeholder="Ingrese la consulta que desea realizar..." rows="5" title="Puedes escribir hasta 600 caracteres" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow"><?= esc($valorConsultaHecha); ?></textarea>
+                    <textarea name="consulta" id="consulta" placeholder="Ingrese la consulta que desea realizar..." rows="5" class="w-75 ps-2 pe-2 pt-1 pb-1 border shadow"><?= esc($valorConsultaHecha); ?></textarea>
                 </div>
                 <?php if($validation->getError('consulta')) {?>
                     <div class="text-center mt-2"> 

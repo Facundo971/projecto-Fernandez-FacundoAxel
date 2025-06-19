@@ -1,5 +1,5 @@
 <main class="conteiner__form-altaDeProductos">
-    <div class="bg-white rounded-2 pt-3 pb-4">
+    <div class="bg-light rounded-2 pt-3 pb-4">
         <h1 class="text-center mb-3">Editar Producto</h1>
 
         <?php $validation = \Config\Services::validation() ?>
@@ -26,10 +26,10 @@
 
             <div class="row mt-3">
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="descripcion"><b>Descripcion</b></label>      
+                    <label for="descripcion"><b>Descripción</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripcion del producto..." value="<?= session()->getFlashdata('limpiarProductoValor') ? '' : $producto['descripcion'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripción del producto..." value="<?= session()->getFlashdata('limpiarProductoValor') ? '' : $producto['descripcion'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('descripcion')) {?> 
                     <div class="text-center mt-2"> 
@@ -126,10 +126,10 @@
 
             <div class="row mt-3">
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="stockMin"><b>Stock Minimo</b></label>      
+                    <label for="stockMin"><b>Stock Mínimo</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="number" id="stockMin" name="stockMin" placeholder="Ingrese el stock minimo del producto..." value="<?= session()->getFlashdata('limpiarProductoValor') ? '' : $producto['stock_min'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="number" id="stockMin" name="stockMin" placeholder="Ingrese el stock mínimo del producto..." value="<?= session()->getFlashdata('limpiarProductoValor') ? '' : $producto['stock_min'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('stockMin')) {?> 
                     <div class="text-center mt-2"> 
@@ -148,9 +148,6 @@
                 <div class="col-12 mt-2 d-flex justify-content-center">
                     <img src="<?= base_url('assets/uploads/' . $producto['imagen']); ?>" alt="Imagen actual" style="max-width:200px;">
                 </div>
-                <!-- <div class="col-12 d-flex justify-content-center ps-5 pe-5">
-                    <input type="file" id="imagen" name="imagen" accept="image/png, image/jpg, image/jpeg">
-                </div> -->
                 <div class="col-12 ps-5 pe-5">
                     <input type="file" id="imagen" name="imagen" accept="image/png, image/jpg, image/jpeg" class="opacity-75 w-100">
                 </div>

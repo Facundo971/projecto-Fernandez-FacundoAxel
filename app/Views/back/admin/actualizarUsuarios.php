@@ -35,10 +35,10 @@
                 <?php }?>
 
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="email"><b>Correo Electronico</b></label>      
+                    <label for="email"><b>Correo Electrónico</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="email" id="email" name="email" placeholder="Ingrese el correo..." value="<?= session()->getFlashdata('limpiarUsuarioValor') ? '' : $usuario['email'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="email" id="email" name="email" placeholder="Ingrese el correo..." value="<?= session()->getFlashdata('limpiarUsuarioValor') ? '' : $usuario['email'] ?>" title="Debe ser un correo válido de Gmail (por ejemplo, usuario123@gmail.com)" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('email')) {?> 
                     <div class="text-center mt-2"> 
@@ -62,7 +62,7 @@
                     <label for="contraseña"><b>Contraseña</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese la contraseña..." class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese la contraseña..." title="Debe contener al menos una letra mayúscula, un número y un carácter especial (@$!%*?&)" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('contraseña')) {?> 
                     <div class="text-center mt-2"> 

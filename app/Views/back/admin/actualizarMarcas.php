@@ -1,6 +1,6 @@
 <main class="conteiner__form-altaDeMarcas">
     <div class="bg-light rounded-2 pt-3 pb-4">
-        <h1 class="text-center mb-3">Editar Marcas</h1>
+        <h1 class="text-center mb-3">Editar Marca</h1>
         <?php $validation = \Config\Services::validation() ?>
         <form action="<?php echo base_url('enviar-formMarcaActualizar'); ?>" method="POST">
             <?= csrf_field() ?> 
@@ -11,10 +11,10 @@
                 </div>
 
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="marca"><b>Descripcion de la Marca</b></label>      
+                    <label for="marca"><b>Descripción</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="text" id="marca" name="marca" placeholder="Ingrese la descripción..." value="<?= session()->getFlashdata('limpiarMarcaValor') ? '' : $marca['descripcion'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" id="marca" name="marca" placeholder="Ingrese la descripción de una marca..." value="<?= session()->getFlashdata('limpiarMarcaValor') ? '' : $marca['descripcion'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('marca')) {?> 
                     <div class="text-center mt-2"> 

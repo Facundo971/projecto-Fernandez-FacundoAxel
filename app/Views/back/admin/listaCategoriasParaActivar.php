@@ -11,9 +11,9 @@
 
 <main class="conteiner__listaDeCategorias">
     <div class="bg-white rounded-2">
-        <h1 class="text-center pt-2">Lista de Categorias Desactivados</h1>
+        <h1 class="text-center pt-2">Lista de Categorias Desactivadas</h1>
         <div class="d-flex justify-content-end pb-2 pe-2">
-            <a href= "<?php echo base_url('mostrarListaCategoriasActualizarEliminar'); ?>" class="btn btn-primary text-white rounded-2"><b>Volver</b></a>
+            <a href= "<?php echo base_url('mostrarListaCategoriasActualizarEliminar'); ?>" class="btn btn-secondary text-white rounded-2"><b>Volver</b></a>
         </div>
         <?php if(session()->getFlashdata('msgExitoso')): ?>
             <div class="text-center mt-2">

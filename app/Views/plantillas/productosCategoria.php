@@ -24,7 +24,8 @@
                                     <?php ++$acumulador; ?>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                            <?php echo $acumulador; ?> resultados
+                            <?php $menor = (count($productos) < $acumulador) ? count($productos) : $acumulador; ?>
+                            <?php echo $menor; ?> resultados
                         </p>
                     </div>
                     <div class="col-12 mb-4">

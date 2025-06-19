@@ -171,7 +171,7 @@ class Producto_controller extends Controller{
         $data = ['eliminado' => 'SI'];
         $productoModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'Producto fue eliminado exitosamente.');
+        session()->setFlashdata('msgExitoso', 'Producto desactivado exitosamente');
         return redirect()->to('/mostrarListaProductosActualizarEliminar');
     }
 
@@ -182,7 +182,7 @@ class Producto_controller extends Controller{
         $data = ['eliminado' => 'NO'];
         $productoModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'Producto fue Activado exitosamente.');
+        session()->setFlashdata('msgExitoso', 'Producto activado exitosamente');
         return redirect()->to('/mostrarListaProductosParaActivar');
     }
 
@@ -250,7 +250,7 @@ class Producto_controller extends Controller{
 
             $producto = new Producto_model();
             $producto->insert($data);
-            session()->setFlashdata('msgExitoso', 'Producto Registrado con Exito');
+            session()->setFlashdata('msgExitoso', 'Producto registrado exitosamente');
             return $this->response->redirect(site_url('altaDeProductos'));
         }
     }
@@ -296,24 +296,17 @@ class Producto_controller extends Controller{
             ];
 
             $img = $this->request->getFile('imagen');
-            // Verificamos si se ha subido un archivo válido y sin errores.
-            //$img->isValid(): Este método verifica que el archivo se haya subido correctamente y que no presentase errores durante el proceso de subirlo. Si la subida falló o se encontró algún error, este método retornará false.
-            //!$img->hasMoved(): Este método comprueba si el archivo ya fue movido desde su ubicación temporal. La negación (!) se utiliza para confirmar que el archivo aún no se ha trasladado a otra carpeta. Esto es crucial porque, una vez movido, no se puede mover nuevamente.
             if ($img->isValid() && !$img->hasMoved()) {
-                // Opcional: Generamos un nombre aleatorio para evitar duplicados.
                 $nombre_aleatorio = $img->getRandomName();
-                // Movemos el archivo a la carpeta deseada.
                 $img->move(ROOTPATH . 'assets/uploads', $nombre_aleatorio);
-                // Actualizamos el campo de imagen solamente si se subió un archivo.
                 $data['imagen'] = $nombre_aleatorio;
             }
-            // En caso de que el usuario no haya subido una imagen, se mantiene la imagen anterior.
 
             $productoModel = new Producto_model();
             $id = $this->request->getVar('id');
             $productoModel->update($id, $data);
 
-            session()->setFlashdata('msgExitoso', 'Producto actualizado con éxito');
+            session()->setFlashdata('msgExitoso', 'Producto actualizado exitosamente');
             return $this->response->redirect(site_url('mostrarListaProductosActualizarEliminar'));
         }
     }

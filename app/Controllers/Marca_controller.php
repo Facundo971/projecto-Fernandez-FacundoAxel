@@ -123,15 +123,17 @@ class Marca_controller extends Controller{
             $formModel->save([
                 'descripcion' => $this->request->getVar('marca')
             ]);
-            session()->setFlashdata('msgExitoso', 'Marca registrada con exito');
+            session()->setFlashdata('msgExitoso', 'Marca registrada exitosamente');
             return redirect()->to('/altaDeMarcas');
         }
     }
 
     public function formValidationUpdate(){
+        $id = $this->request->getVar('id');
+
         $input = $this->validate([
             'id'        => 'required|numeric',
-            'marca'     => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
+            'marca'     => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]|is_unique[marcas.descripcion,id_marca,' . $id . ']',
         ]);
         if(!$input){
             $marcaModel = new Marca_model();
@@ -152,7 +154,7 @@ class Marca_controller extends Controller{
             $id = $this->request->getVar('id');
             $marcaModel->update($id, $data);
 
-            session()->setFlashdata('msgExitoso', 'Marca actualizada con exito');
+            session()->setFlashdata('msgExitoso', 'Marca actualizada exitosamente');
             return redirect()->to('/mostrarListaMarcasActualizarEliminar');
         }
     }

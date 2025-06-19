@@ -3,7 +3,7 @@
     $numero = 0;
 
     foreach ($consultas as $consulta) {
-        if ($consulta['leido'] == 'NO') {
+        if ($consulta['baja'] == 'NO') {
             $boleano = false;
             break;
         }
@@ -21,7 +21,6 @@
                 <p class="fs-5 text-white"><b class="p-1 bg-success bg-opacity-75 rounded-2"><?= session()->getFlashdata('msgExitoso'); ?></b></p>
             </div>
         <?php endif; ?>
-
         <?php if($boleano == true): ?>
             <div class="bg-white pt-5 pb-5 border-top">
                 <div class="text-center">
@@ -41,7 +40,7 @@
                     </div>
                 </div>
                 <?php foreach($consultas as $consulta): ?>
-                    <?php if($consulta['leido'] == 'NO'): ?>
+                    <?php if($consulta['baja'] == 'NO'): ?>
                         <div class="row w-100 ms-0 border-top">
                             <div class="col-2 border-end d-flex justify-content-center align-items-center">
                                 <p><b><?php echo ++$numero; ?></b></p>
@@ -52,7 +51,11 @@
                                         <p class="mb-0"><b>Nombre y Apellido:</b> <?php echo $consulta['nombre']; ?>, <?php echo $consulta['apellido']; ?></p>
                                     </div>
                                     <div>
-                                        <a href= "<?php echo base_url('marcarConsulta/' . $consulta['id_consulta']); ?>" class="w-100 btn btn-primary text-white rounded-2"><b>Marcar</b></a>
+                                        <?php if($consulta['leido'] == 'NO'): ?>
+                                            <a href= "<?php echo base_url('marcarConsulta/' . $consulta['id_consulta']); ?>" class="w-100 btn btn-primary text-white rounded-2"><b>Leer</b></a>
+                                        <?php else: ?>
+                                            <a href= "<?php echo base_url('eliminarConsulta/' . $consulta['id_consulta']); ?>" class="w-100 btn btn-danger text-white rounded-2"><b>Borrar</b></a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center">

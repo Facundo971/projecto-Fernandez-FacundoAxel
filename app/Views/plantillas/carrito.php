@@ -49,14 +49,14 @@
                             <p class="card-text text-dark opacity-75"><?= $item['options']['descripcion'] ?? '' ?></p>
                             <h4 class="text-dark text-xl-start text-lg-start text-md-center text-sm-center text-center"><b><?= number_format($item['price'], 2) ?></b></h4>
                             <div class="text-xl-start text-lg-start text-md-center text-sm-center text-center">
-                                <a href="<?= base_url('suma-carrito/' . $item['rowid']) ?>" class="text-decoration-none text-white rounded-1 pt-1 pb-1 ps-2 pe-2"><b>+</b></a>
+                                <a href="<?= base_url('suma-carrito/' . $item['rowid']) ?>" class="text-decoration-none text-white rounded-1 pt-1 pb-1"><b>+</b></a>
                                 <?= number_format($item['qty']) ?>
-                                <a href="<?= base_url('resta-carrito/' . $item['rowid']) ?>" class="text-decoration-none text-white rounded-1 pt-1 pb-1 ps-2 pe-2"><b>-</b></a>
+                                <a href="<?= base_url('resta-carrito/' . $item['rowid']) ?>" class="text-decoration-none text-white rounded-1 pt-1 pb-1"><b>&ndash;</b></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12 d-xl-flex d-lg-flex d-md-block d-sm-block d-block justify-content-center align-items-center">
-                        <a href="<?= base_url('borrar-producto/' . $item['rowid']) ?>" class="text-white text-center text-decoration-none btn btn-danger rounded-2 me-2 mt-4 mb-4 d-block">Eliminar</a>
+                        <a href="<?= base_url('borrar-producto/' . $item['rowid']) ?>" class="text-white text-center text-decoration-none btn btn-danger rounded-2 me-2 mt-4 mb-4 d-block"><b>Eliminar</b></a>
                     </div>
                 </div>
                 <?php endforeach; ?>

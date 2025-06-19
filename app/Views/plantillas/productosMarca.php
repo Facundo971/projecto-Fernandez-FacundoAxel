@@ -2,6 +2,7 @@
     $acumulador = 0;
     $acumuladorMarca = 0;
     $boleano = true;
+    $contadorProductoMarca = count($productos);
 
     foreach ($productosTotal as $producto) {
         if ($marca['id_marca'] == $producto['marca_id'] && $producto['eliminado'] == 'NO') {
@@ -24,7 +25,8 @@
                                     <?php ++$acumulador; ?>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                            <?php echo $acumulador; ?> resultados
+                            <?php $menor = (count($productos) < $acumulador) ? count($productos) : $acumulador; ?>
+                            <?php echo $menor; ?> resultados
                         </p>
                     </div>
                     <div class="col-12 mb-4">

@@ -12,6 +12,7 @@
     }
     $valorFechaInicioQuery = $session->getFlashdata('fechaInicioQueryValor');
     $valorFechaFinQuery = $session->getFlashdata('fechaFinQueryValor');
+    $valorFechasIncorrectasDeVentas = $session->getFlashdata('msgFechasIncorrectasDeVentas');
 ?>
 
 <main class="conteiner__listaDeVentas">
@@ -19,11 +20,11 @@
         <form class="w-100" action="<?php echo base_url('enviar-formFechaQuery'); ?>" method="POST">
             <div class="mb-2">
                 <p class="mb-0"><b>Buscar desde: </b></p>
-                <input type="search" name="fechaInicioQuery" placeholder="Escribe la fecha de inicio de la venta que quieres buscar..." value="<?= $valorFechaInicioQuery; ?>" class="w-100 p-2 border">
+                <input type="search" name="fechaInicioQuery" placeholder="Escribe la fecha de inicio de la venta que quieres buscar..." value="<?= $valorFechaInicioQuery; ?>" class="w-100 p-2 border shadow">
             </div>
             <div class="mb-2">
                 <p class="mb-0"><b>Buscar hasta: </b></p>
-                <input type="search" name="fechaFinQuery" placeholder="Escribe la fecha de fin de la venta que quieres buscar..." value="<?= $valorFechaFinQuery; ?>" class="w-100 p-2 border">
+                <input type="search" name="fechaFinQuery" placeholder="Escribe la fecha de fin de la venta que quieres buscar..." value="<?= $valorFechaFinQuery; ?>" class="w-100 p-2 border shadow">
             </div>
             <div class="w-100 d-flex justify-content-center align-items-center">
                 <button class="w-25 mt-2 mb-3 p-2 border btn btn-primary"><b>Buscar</b></button>
@@ -50,12 +51,19 @@
                     <p class="mb-0"><b>Acciones</b></p>
                 </div>
             </div>
-            <?php if($boleano == true): ?>
+            <?php if($boleano == true && $valorFechasIncorrectasDeVentas == false): ?>
                 <div class="bg-white pt-5 pb-5 border-top">
                     <div class="text-center">
                         <img src="<?= base_url('assets/img/VentasNoRegistradas.png'); ?>" alt="Ventas no registrada" width="140px">
                     </div>
                     <h4 class="text-center ps-4 pe-4"><b>Ups, aún no hay ventas realizadas</b></h4>
+                </div>
+            <?php elseif($boleano == true && $valorFechasIncorrectasDeVentas == true): ?>
+                <div class="bg-white pt-5 pb-5 border-top">
+                    <div class="text-center">
+                        <img src="<?= base_url('assets/img/VentasNoRegistradas.png'); ?>" alt="Ventas no registrada" width="140px">
+                    </div>
+                    <h4 class="text-center ps-4 pe-4"><b>No se encontraron registros para las fechas especificadas</b></h4>
                 </div>
             <?php else: ?>
                 <?php foreach($ventas as $venta): ?>

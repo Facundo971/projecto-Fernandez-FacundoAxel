@@ -15,11 +15,10 @@
                         <p>A continuación te dejamos los pasos para comprar en NetShop:</p>
                         <ol>
                             <li>Inicia sesión en NetShop.</li>
-                            <li>Una vez que hayas ingresado, utiliza el buscador para encontrar el producto que deseas comprar o navega por el menú principal para seleccionar el que prefieras.</li>
-                            <li>Haz clic en el botón COMPRAR después de seleccionar tu producto. También puedes agregar productos a "Mi Carrito" y proceder a la compra desde allí.</li>
-                            <li>Completa el formulario con la información requerida. Los campos obligatorios estarán marcados con un asterisco (*).</li>
-                            <li>Elige el método de pago que prefieras.</li>
-                            <li>Haz clic en COMPRAR para finalizar tu compra. Al completar el proceso, aparecerá un mensaje confirmando que la transacción se realizó con éxito.</li>
+                            <li>Una vez que hayas ingresado, utiliza el buscador para encontrar el producto que deseas o navega por el menú principal para seleccionarlo.</li>
+                            <li>Haz clic en el botón "Añadir al carrito" para agregar el producto deseado.</li>
+                            <li>Accede a "Mi Carrito" y, si estás conforme con tu selección, haz clic en el botón "Comprar" para finalizar tu transacción.</li>
+                            <li>Al completar el proceso, se mostrarán los detalles de tu compra confirmando que la transacción se realizó con éxito.</li>
                         </ol>
                     </div>
                 </div>
@@ -32,7 +31,7 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse border" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body d-flex justify-content-center">
-                        <img src="assets/img/Ubicacion de Sucursal.png" alt="Ubicacion de la Sucursal" width="100%">
+                        <img src="<?= base_url('assets/img/Ubicacion de Sucursal.png'); ?>" alt="Ubicacion de la Sucursal" width="100%">
                     </div>
                 </div>
             </div>

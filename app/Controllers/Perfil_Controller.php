@@ -72,7 +72,7 @@ class Perfil_Controller extends Controller{
         $perfilModel = new Perfiles_model();
         $data['perfil'] = $perfilModel->find($id);
 
-        $dato['titulo'] = 'Dashboard | Editar Perfiles';
+        $dato['titulo'] = 'Dashboard | Editar Perfil';
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav');
         echo view('back/admin/actualizarPerfiles', $data);
@@ -86,7 +86,7 @@ class Perfil_Controller extends Controller{
         $data = ['baja' => 'SI'];
         $perfilModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'Perfil dado de baja exitosamente.');
+        session()->setFlashdata('msgExitoso', 'Perfil desactivado exitosamente');
         return redirect()->to('/mostrarListaPerfilesActualizarEliminar');
     }
 
@@ -97,7 +97,7 @@ class Perfil_Controller extends Controller{
         $data = ['baja' => 'NO'];
         $perfilModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'Perfil fue Activado Exitosamente.');
+        session()->setFlashdata('msgExitoso', 'Perfil activado exitosamente');
         return redirect()->to('/mostrarListaPerfilesParaActivar');
     }
 
@@ -125,15 +125,17 @@ class Perfil_Controller extends Controller{
                 'descripcion' => $this->request->getVar('perfil')
             ]);
 
-            session()->setFlashdata('msgExitoso', 'Perfil Registrado con Exito');
+            session()->setFlashdata('msgExitoso', 'Perfil registrado exitosamente');
             return redirect()->to('/altaDePerfiles');
         }
     }
 
     public function formValidationUpdate(){
+        $id = $this->request->getVar('id');
+
         $input = $this->validate([
             'id' => 'required|numeric',
-            'perfil' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
+            'perfil' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]|is_unique[perfiles.descripcion,id_perfil,' . $id . ']',
         ]);
         if(!$input){
             $perfilModel = new Perfiles_model();
@@ -154,7 +156,7 @@ class Perfil_Controller extends Controller{
             $id = $this->request->getVar('id');
             $perfilModel->update($id, $data);
 
-            session()->setFlashdata('msgExitoso', 'Perfil Actualizado con Exito');
+            session()->setFlashdata('msgExitoso', 'Perfil actualizado exitosamente');
             return redirect()->to('/mostrarListaPerfilesActualizarEliminar');
         }
     }

@@ -85,7 +85,7 @@ class Categoria_controller extends Controller{
         $data = ['activo' => 2];
         $categoriaModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'Categoría desactivada exitosamente.');
+        session()->setFlashdata('msgExitoso', 'Categoría desactivada exitosamente');
         return redirect()->to('/mostrarListaCategoriasActualizarEliminar');
     }
 
@@ -96,7 +96,7 @@ class Categoria_controller extends Controller{
         $data = ['activo' => 1];
         $categoriaModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'Categoría activada exitosamente.');
+        session()->setFlashdata('msgExitoso', 'Categoría activada exitosamente');
         return redirect()->to('/mostrarListaCategoriasParaActivar');
     }
 
@@ -122,15 +122,17 @@ class Categoria_controller extends Controller{
             $formModel->save([
                 'descripcion' => $this->request->getVar('categoria')
             ]);
-            session()->setFlashdata('msgExitoso', 'Categoria Registrada con Exito');
+            session()->setFlashdata('msgExitoso', 'Categoria registrada exitosamente');
             return redirect()->to('/altaDeCategorias');
         }
     }
 
     public function formValidationUpdate(){
+        $id = $this->request->getVar('id');
+
         $input = $this->validate([
             'id'        => 'required|numeric',
-            'categoria' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
+            'categoria' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]|is_unique[categorias.descripcion,id,' . $id . ']',
         ]);
         if(!$input){
             $categoriaModel = new Categoria_model();
@@ -151,7 +153,7 @@ class Categoria_controller extends Controller{
             $id = $this->request->getVar('id');
             $categoriaModel->update($id, $data);
 
-            session()->setFlashdata('msgExitoso', 'Categoría Actualizada con Exito');
+            session()->setFlashdata('msgExitoso', 'Categoría actualizada exitosamente');
             return redirect()->to('/mostrarListaCategoriasActualizarEliminar');
         }
     }

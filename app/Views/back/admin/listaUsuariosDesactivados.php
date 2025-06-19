@@ -26,9 +26,9 @@
         </form>
     </div>
     <div class="bg-white rounded-2">
-        <h1 class="text-center pt-2">Lista de Usuarios Desactivados</h1>
+        <h1 class="text-center pt-2">Lista de Usuarios no Habilitados</h1>
         <div class="d-flex justify-content-end pb-2 pe-2">
-            <a href= "<?php echo base_url('mostrarListaUsuarios'); ?>" class="btn btn-primary text-white rounded-2"><b>Volver</b></a>
+            <a href= "<?php echo base_url('mostrarListaUsuarios'); ?>" class="btn btn-secondary text-white rounded-2"><b>Volver</b></a>
         </div>
         <div class="listaDeUsuarios-scroll">
             <div class="row w-100 ms-0 border-top">

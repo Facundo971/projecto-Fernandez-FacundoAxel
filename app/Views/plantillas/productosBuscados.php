@@ -2,9 +2,10 @@
     $session = session();
     $valorQuery = $session->get('queryValor');
     $acumulador = 0;
+    $acumuladorTotal = 0;
     $boleano = true;
 
-    foreach ($productosTotal as $producto) {
+    foreach ($productos as $producto) {
         if ($producto['eliminado'] == 'NO') {
             $boleano = false;
             break;
@@ -13,7 +14,7 @@
 ?>
 
 <main class="contenedor__productos">
-    <?php if($boleano == true && count($productos) > 0): ?>
+    <?php if($boleano == true): ?>
         <div class="bg-white pt-5 pb-5">
             <div class="text-center">
                 <img src="<?= base_url('assets/img/Busqueda no encontrada.png'); ?>" alt="Busqueda no encontrada" width="140px">
@@ -27,7 +28,12 @@
                 <div class="row">
                     <div class="col-12 mb-4">
                         <h5 class="text-dark"><b>Productos</b></h5>
-                        <p class="opacity-75 mt-1 mb-1"><?= count($productos); ?> resultados</p>
+                        <?php foreach($productos as $producto): ?>
+                            <?php if($producto['eliminado'] == 'NO'): ?>
+                                <?php ++$acumuladorTotal; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        <p class="opacity-75 mt-1 mb-1"><?php echo $acumuladorTotal; ?> resultados</p>
                     </div>
                     <div class="col-12 mb-4">
                         <h5 class="text-dark"><b>Marcas</b></h5>

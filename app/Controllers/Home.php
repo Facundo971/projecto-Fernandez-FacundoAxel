@@ -14,13 +14,15 @@ class Home extends BaseController
         $dato['productos'] = $productoModel->getProductoAll();
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
         
         $data['titulo'] = 'NetShop | Principal';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/carrusel');
         echo view('plantillas/index', $dato);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function buscador(){
@@ -35,10 +37,7 @@ class Home extends BaseController
         $productoModel = new Producto_model();
 
         if($query){ 
-            // Filtra los productos cuyo nombre contenga el texto ingresado
-            $data['productos'] = $productoModel
-                ->like('nombre_producto', $query) // Esto significa que se buscarán registros en la tabla donde el campo nombre_producto contenga la cadena definida en la variable $query.
-                ->where('eliminado', 'NO')->findAll();
+            $data['productos'] = $productoModel->like('nombre_producto', $query)->where('eliminado', 'NO')->findAll();
         } else {
             $data['productos'] = [];
         }
@@ -48,7 +47,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosBuscados', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function buscadorPrecioBuscadorProducto($valor){
@@ -72,7 +71,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosBuscados', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMayorPrecioBuscador($valor){
@@ -90,7 +89,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosBuscados', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMenorPrecioBuscador($valor){
@@ -108,7 +107,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosBuscados', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productos(){
@@ -123,7 +122,7 @@ class Home extends BaseController
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/productos', $dato);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function buscadorPrecioProducto(){
@@ -147,7 +146,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosPrecio', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMayorPrecio(){
@@ -163,7 +162,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosOrdenados', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMenorPrecio(){
@@ -179,7 +178,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosOrdenados', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function marcas($id){
@@ -198,7 +197,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosMarca', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function buscadorPrecioMarcaProducto($idMarca){
@@ -224,7 +223,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosMarca', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMayorPrecioMarca($idMarca){
@@ -244,7 +243,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosMarca', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMenorPrecioMarca($idMarca){
@@ -264,7 +263,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosMarca', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function categorias($id){
@@ -283,7 +282,7 @@ class Home extends BaseController
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/productosCategoria', $dato);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function buscadorPrecioCategoriaProducto($idCategoria){
@@ -309,7 +308,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosCategoria', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMayorPrecioCategoria($idCategoria){
@@ -329,7 +328,7 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosCategoria', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function productosMenorPrecioCategoria($idCategoria){
@@ -349,23 +348,27 @@ class Home extends BaseController
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/productosCategoria', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function ayuda(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Ayuda';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/ayuda');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function carrito(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $cart = \Config\Services::cart();
         $request = \Config\Services::request();
@@ -375,61 +378,71 @@ class Home extends BaseController
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/carrito', $dato);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function contacto(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Contacto';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/contacto');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function consultas(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Consultas';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/consultas');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function quienesSomos(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Quienes Somos';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/quienesSomos');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function comercializacion(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Comercializacion';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/comercializacion');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function terminosUsos(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Terminos y Uso';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('plantillas/terminosUsos');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 }

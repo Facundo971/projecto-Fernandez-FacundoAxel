@@ -3,7 +3,7 @@
     $numero = 0;
 
     foreach ($consultas as $consulta) {
-        if ($consulta['leido'] == 'SI') {
+        if ($consulta['baja'] == 'SI') {
             $boleano = true;
             break;
         }
@@ -12,9 +12,9 @@
 
 <main class="conteiner__listaDeConsultas">
     <div class="bg-white rounded-2">
-        <h1 class="text-center pt-2">Lista de Consultas</h1>
+        <h1 class="text-center pt-2">Lista de Consultas Leídas</h1>
         <div class="d-flex justify-content-end pb-2 pe-2">
-            <a href= "<?php echo base_url('mostrarListaConsultas'); ?>" class="btn btn-primary text-white rounded-2"><b>Volver</b></a>
+            <a href= "<?php echo base_url('mostrarListaConsultas'); ?>" class="btn btn-secondary text-white rounded-2"><b>Volver</b></a>
         </div>
         <?php if(session()->getFlashdata('msgExitoso')): ?>
             <div class="text-center mt-2">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <?php foreach($consultas as $consulta): ?>
-                    <?php if($consulta['leido'] == 'SI'): ?>
+                    <?php if($consulta['baja'] == 'SI'): ?>
                         <div class="row w-100 ms-0 border-top">
                             <div class="col-2 border-end d-flex justify-content-center align-items-center">
                                 <p><b><?php echo ++$numero; ?></b></p>

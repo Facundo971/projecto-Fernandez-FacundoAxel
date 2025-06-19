@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Categoria_model;
+use App\Models\Marca_model;
 use App\Models\Perfiles_model;
 use App\Models\Usuarios_model;
 use CodeIgniter\Controller;
@@ -166,7 +167,7 @@ class Usuario_controller extends Controller{
         $data = ['baja' => 'SI'];
         $usuarioModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'El Usuario fue dado de baja con exitosamente.');
+        session()->setFlashdata('msgExitoso', 'El Usuario fue dado de baja exitosamente');
         return redirect()->to('/mostrarListaUsuariosActualizarEliminar');
     }
 
@@ -177,19 +178,21 @@ class Usuario_controller extends Controller{
         $data = ['baja' => 'NO'];
         $usuarioModel->update($id, $data);
 
-        session()->setFlashdata('msgExitoso', 'El Usuario fue Activado con Exitosamente.');
+        session()->setFlashdata('msgExitoso', 'El Usuario fue habilitado exitosamente');
         return redirect()->to('/mostrarListaUsuariosParaActivar');
     }
 
     public function registrarse(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Registro';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('back/usuario/registrarse');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function formValidation(){
@@ -232,7 +235,7 @@ class Usuario_controller extends Controller{
                 'pass' => password_hash($this->request->getVar('contraseña'), PASSWORD_DEFAULT)
             ]);
 
-            session()->setFlashdata('msgExitoso', 'Usuario Registrado con Exito');
+            session()->setFlashdata('msgExitoso', 'Usuario registrado exitosamente');
             return redirect()->to('/registrarse');
         }
     }
@@ -285,18 +288,20 @@ class Usuario_controller extends Controller{
                 'perfil_id' => $this->request->getVar('perfil'),
             ]);
 
-            session()->setFlashdata('msgExitoso', 'Usuario Creado con Exito');
+            session()->setFlashdata('msgExitoso', 'Usuario registrado exitosamente');
             return redirect()->to('/altaDeUsuarios');
         }
     }
 
     public function formValidationUpdate(){
+        $id = $this->request->getVar('id');
+
         $input = $this->validate([
             'id' => 'required|numeric',
             'nombre' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'apellido' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
-            'usuario' => 'required|trim|min_length[4]|max_length[20]',
-            'email' => 'required|trim|valid_email',
+            'usuario' => 'required|trim|min_length[4]|max_length[20]|is_unique[usuarios.usuario,id_usuario,' . $id . ']',
+            'email' => 'required|trim|valid_email|is_unique[usuarios.email,id_usuario,' . $id . ']',
             'contraseña' => 'trim|permit_empty|min_length[8]|max_length[255]|regex_match[/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+$/]',
             'perfil' => 'required',
         ]);
@@ -330,7 +335,7 @@ class Usuario_controller extends Controller{
             $id = $this->request->getVar('id');
             $usuarioModel->update($id, $data);
 
-            session()->setFlashdata('msgExitoso', 'Usuario actualizado con éxito');
+            session()->setFlashdata('msgExitoso', 'Usuario actualizado exitosamente');
             return redirect()->to('/mostrarListaUsuariosActualizarEliminar');
         }
     }

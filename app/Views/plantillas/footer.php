@@ -41,14 +41,11 @@
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 text-center">
                 <ul class="list-unstyled">
                     <li><b>Marcas</b></li>
-                    <li class="opacity-75">Apple</li>
-                    <li class="opacity-75">Lenovo</li>
-                    <li class="opacity-75">HP</li>
-                    <li class="opacity-75">Dell</li>
-                    <li class="opacity-75">Samsung</li>
-                    <li class="opacity-75">Noblex</li>
-                    <li class="opacity-75">Exo</li>
-                    <li class="opacity-75">Gadnic</li>
+                    <?php foreach($marcas as $marca): ?>
+                        <?php if($marca['activo'] == 1): ?>
+                            <li class="opacity-75"><?php echo $marca['descripcion']; ?></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 text-center">

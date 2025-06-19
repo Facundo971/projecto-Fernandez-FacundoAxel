@@ -11,8 +11,8 @@
 ?>
 
 <main class="conteiner__form-altaDeProductos">
-    <div class="bg-white rounded-2 pt-3 pb-4">
-        <h1 class="text-center mb-3">Agregar Productos</h1>
+    <div class="bg-light rounded-2 pt-3 pb-4">
+        <h1 class="text-center mb-3">Agregar Producto</h1>
 
         <?php if(session()->getFlashdata('msgExitoso')): ?>
             <div class="text-center mt-2">
@@ -39,10 +39,10 @@
 
             <div class="row mt-3">
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="descripcion"><b>Descripcion</b></label>      
+                    <label for="descripcion"><b>Descripción</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripcion del producto..." value="<?= esc($valorDescripcionProducto); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripción del producto..." value="<?= esc($valorDescripcionProducto); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('descripcion')) {?> 
                     <div class="text-center mt-2"> 
@@ -139,10 +139,10 @@
 
             <div class="row mt-3">
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="stockMin"><b>Stock Minimo</b></label>      
+                    <label for="stockMin"><b>Stock Mínimo</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="number" id="stockMin" name="stockMin" placeholder="Ingrese el stock minimo del producto..." value="<?= esc($valorStockMinProducto); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="number" id="stockMin" name="stockMin" placeholder="Ingrese el stock mínimo del producto..." value="<?= esc($valorStockMinProducto); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('stockMin')) {?> 
                     <div class="text-center mt-2"> 

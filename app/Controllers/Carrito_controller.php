@@ -51,7 +51,7 @@ class Carrito_controller extends Controller{
 
     public function devolverCarrito(){
         $cart = \Config\Services::cart(); 
-        return $cart->contents(); // Devuelve un array con todos los ítems
+        return $cart->contents();
     }
 
 

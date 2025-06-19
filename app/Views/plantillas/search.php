@@ -3,7 +3,7 @@
     $valorQuery = $session->getFlashdata('queryValor');
 ?>
 
-<form class="d-flex justify-content-center align-items-center contenedor__form-search" action="<?php echo base_url('enviar-formQuery'); ?>" method="POST">
+<form class="d-flex justify-content-center align-items-center contenedor__form-search" action="<?php echo base_url('enviar-formQuery'); ?>" method="GET">
     <div class="d-flex align-items-center form__div-1-search">
         <input type="search" name="query" placeholder="Escribe el producto que quieres buscar..." value="<?= $valorQuery; ?>" class="border shadow-sm form__div-1-search-input">
     </div>

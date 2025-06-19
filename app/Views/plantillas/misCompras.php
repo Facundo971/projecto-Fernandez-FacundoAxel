@@ -2,10 +2,11 @@
     $session = session();
     $valorFechaInicioQuery20 = $session->getFlashdata('fechaInicioQueryValor20');
     $valorFechaFinQuery20 = $session->getFlashdata('fechaFinQueryValor20');
+    $valorFechasIncorrectas = $session->getFlashdata('msgFechasIncorrectas');
 ?>
 
 <main class="conteiner__misCompras">
-    <?php if(empty($ventas)): ?>
+    <?php if(empty($ventas) && $valorFechasIncorrectas == false): ?>
         <div class="row bg-light rounded-2 w-100 pt-5 pb-5">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <p class="fs-5 text-center"><b>No has realizado ninguna compra aún</b></p>
@@ -14,16 +15,25 @@
                 <a href="<?= base_url('productos') ?>" class="text-white text-decoration-none rounded-2 me-2 conteiner__div-boton-carrito"><b>Ir a Comprar</b></a>
             </div>
         </div>
+    <?php elseif(empty($ventas) && $valorFechasIncorrectas == true): ?>
+        <div class="row bg-light rounded-2 w-100 pt-5 pb-5">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <p class="fs-5 text-center"><b>No se encontraron registros para las fechas especificadas</b></p>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-2 d-flex justify-content-center align-items-center">
+                <a href="<?php echo base_url('misCompras'); ?>" class="text-white text-decoration-none rounded-2 me-2 conteiner__div-boton-carrito"><b>Ir a Mis Compras</b></a>
+            </div>
+        </div>
     <?php else: ?>
         <div class="mb-1 d-flex justify-content-end">
             <form class="w-100" action="<?php echo base_url('enviar-formFechaQuery20'); ?>" method="POST">
                 <div class="mb-2">
                     <p class="mb-0"><b>Buscar desde: </b></p>
-                    <input type="search" name="fechaInicioQuery20" placeholder="Escribe la fecha de inicio de la venta que quieres buscar..." value="<?= $valorFechaInicioQuery20; ?>" class="w-100 p-2 border">
+                    <input type="search" name="fechaInicioQuery20" placeholder="Escribe la fecha de inicio de la venta que quieres buscar..." value="<?= $valorFechaInicioQuery20; ?>" class="w-100 p-2 border shadow">
                 </div>
                 <div class="mb-2">
                     <p class="mb-0"><b>Buscar hasta: </b></p>
-                    <input type="search" name="fechaFinQuery20" placeholder="Escribe la fecha de fin de la venta que quieres buscar..." value="<?= $valorFechaFinQuery20; ?>" class="w-100 p-2 border">
+                    <input type="search" name="fechaFinQuery20" placeholder="Escribe la fecha de fin de la venta que quieres buscar..." value="<?= $valorFechaFinQuery20; ?>" class="w-100 p-2 border shadow">
                 </div>
                 <div class="w-100 d-flex justify-content-center align-items-center">
                     <button class="text-white w-25 mt-2 mb-3 p-2 border btn"><b>Buscar</b></button>

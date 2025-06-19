@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Categoria_model;
+use App\Models\Marca_model;
 use CodeIgniter\Controller; 
 use App\Models\Producto_model;
 use App\models\Usuarios_model;
@@ -37,12 +38,12 @@ class Venta_controller extends Controller{
         
         // Si hay productos sin stock, avisar y volver al carrito
         if (!empty($productosSinStock)) {
-            $mensaje = 'Los siguientes productos: ' . implode(', ', $productosSinStock) . '. No tienen stock suficiente y fueron eliminados del carrito';
+            $mensaje = 'Los siguientes productos: ' . implode(', ', $productosSinStock) . '. No tienen stock suficiente y fueron eliminados de "Mi Carrito"';
             $session->setFlashdata('mensaje', $mensaje);
             return redirect()->to('/carrito');
         }
         
-        // Si no hay productos válidos, no se registra la venta (FIJARSE COMO FUNCIONARIA)
+        // Si no hay productos válidos, no se registra la venta
         if (empty($productosValidos)) {
             $session->setFlashdata('mensaje', 'No hay productos válidos para registrar la venta');
             return redirect()->to('/carrito');
@@ -75,7 +76,6 @@ class Venta_controller extends Controller{
         return redirect()->to(base_url('vistaDetalleCompra/' . $ventaId));
     }
 
-    // Función del usuario cliente para ver sus compras
     public function verFactura($ventaId){
         $categoriaModel = new Categoria_model();
         $data['categorias'] = $categoriaModel->getCategoriaAll();
@@ -83,30 +83,23 @@ class Venta_controller extends Controller{
         $data['ventas'] = $detalleVentasModel->getDetalles($ventaId);
         $productoModel = new Producto_model();
         $data['productos'] = $productoModel->getProductoAll();
+        $marcaModel = new Marca_model();
+        $data['marcas'] = $marcaModel->getMarcaAll();
 
         $dato['titulo'] = "NetShop | Detalles";
         echo view('plantillas/header', $dato);
         echo view('plantillas/nav', $data);
         echo view('plantillas/detalleDeCompra', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
-
-    // // Función del cliente para ver el detalle de sus facturas de compras
-    // public function verFacturasUsuario($idUsuario){
-    //     $ventas = new VentasCabecera_model();
-    //     $data['ventas'] = $ventas->getVentas($idUsuario);
-    //     $dato['titulo'] = "Todos mis compras";
-    //     echo view('front/head_view_crud', $dato);
-    //     echo view('front/nav_view');
-    //     echo view('back/compras/ver_factura_usuario', $data);
-    //     echo view('front/footer_view');
-    // }
 
     public function misCompras(){
         $categoriaModel = new Categoria_model();
         $data['categorias'] = $categoriaModel->getCategoriaAll();
         $usuarioModel = new Usuarios_model();
         $data['usuarios'] = $usuarioModel->getUsuarioAll();
+        $marcaModel = new Marca_model();
+        $data['marcas'] = $marcaModel->getMarcaAll();
 
         $userId = session()->get('id_usuario');
         $ventasCabeceraModel = new VentasCabecera_model();
@@ -116,7 +109,7 @@ class Venta_controller extends Controller{
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $data);
         echo view('plantillas/misCompras', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function buscadorVentasDeUnCliente(){
@@ -128,14 +121,22 @@ class Venta_controller extends Controller{
         $data['categorias'] = $categoriaModel->getCategoriaAll();
         $usuarioModel = new Usuarios_model();
         $data['usuarios'] = $usuarioModel->getUsuarioAll();
+        $marcaModel = new Marca_model();
+        $data['marcas'] = $marcaModel->getMarcaAll();
 
         $userId = session()->get('id_usuario');
         $ventaModel = new VentasCabecera_model();
         $fechaFinMasUno = date('Y-m-d', strtotime($queryFechaFin20 . ' +1 day'));
 
-        if($queryFechaInicio20 && $queryFechaFin20){ 
-            $data['ventas'] = $ventaModel->where('fecha >=', $queryFechaInicio20)->where('fecha <', $fechaFinMasUno)->where('usuario_id', $userId)->orderBy('fecha', 'ASC')->findAll();
+        if($queryFechaInicio20 && $queryFechaFin20 && ($queryFechaInicio20 <= $queryFechaFin20)){ 
+            $data['ventas'] = $ventaModel
+                ->where('fecha >=', $queryFechaInicio20)
+                ->where('fecha <', $fechaFinMasUno)
+                ->where('usuario_id', $userId)
+                ->orderBy('fecha', 'ASC')
+                ->findAll();
         } else {
+            $session->setFlashdata('msgFechasIncorrectas', 'Las fechas ingresadas no han generado resultados');
             $data['ventas'] = [];
         }
 
@@ -146,7 +147,7 @@ class Venta_controller extends Controller{
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $data);
         echo view('plantillas/misCompras', $data);
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $data);
     }
 
     public function index(){
@@ -166,19 +167,26 @@ class Venta_controller extends Controller{
         $session = session();
         $queryFechaInicio = $this->request->getVar('fechaInicioQuery');
         $queryFechaFin = $this->request->getVar('fechaFinQuery'); 
+
         $usuarioModel = new Usuarios_model();
         $data['usuarios'] = $usuarioModel->getUsuarioAll();
         $ventaModel = new VentasCabecera_model();
         $fechaFinMasUno = date('Y-m-d', strtotime($queryFechaFin . ' +1 day'));
 
-        if($queryFechaInicio && $queryFechaFin){ 
-            $data['ventas'] = $ventaModel->where('fecha >=', $queryFechaInicio)->where('fecha <', $fechaFinMasUno)->findAll();
+        if($queryFechaInicio && $queryFechaFin && ($queryFechaInicio <= $queryFechaFin)){ 
+            $data['ventas'] = $ventaModel
+                ->where('fecha >=', $queryFechaInicio)
+                ->where('fecha <', $fechaFinMasUno)
+                ->orderBy('fecha', 'ASC')
+                ->findAll();
         } else {
+            $session->setFlashdata('msgFechasIncorrectasDeVentas', 'Las fechas ingresadas no han generado resultados');
             $data['ventas'] = [];
         }
 
         $session->setFlashdata('fechaInicioQueryValor', $queryFechaInicio);
         $session->setFlashdata('fechaFinQueryValor', $queryFechaFin);
+
         $data['titulo'] = "Dashboard | Lista de Ventas";
         echo view('plantillas/header', $data);
         echo view('plantillas/nav');
@@ -208,9 +216,14 @@ class Venta_controller extends Controller{
         $ventaModel = new VentasCabecera_model();
         $fechaFinMasUno = date('Y-m-d', strtotime($queryFechaFinDesactivado . ' +1 day'));
 
-        if($queryFechaInicioDesactivado && $queryFechaFinDesactivado){ 
-            $data['ventas'] = $ventaModel->where('fecha >=', $queryFechaInicioDesactivado)->where('fecha <', $fechaFinMasUno)->findAll();
+        if($queryFechaInicioDesactivado && $queryFechaFinDesactivado && ($queryFechaInicioDesactivado <= $queryFechaFinDesactivado)){ 
+            $data['ventas'] = $ventaModel
+                ->where('fecha >=', $queryFechaInicioDesactivado)
+                ->where('fecha <', $fechaFinMasUno)
+                ->orderBy('fecha', 'ASC')
+                ->findAll();
         } else {
+            $session->setFlashdata('msgFechasIncorrectasDeVentasDesactivadas', 'Las fechas ingresadas no han generado resultados');
             $data['ventas'] = [];
         }
 

@@ -279,16 +279,7 @@
         <div class="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1 d-flex justify-content-center">
             <div class="col">
                 <div>
-                    <img src="assets/img/pago.svg" alt="Pago" width="80px" height="80px" class="contenedor__div-img-1-index">
-                </div>
-                <div>
-                    <h5><b>Elige como pagar</b></h5>
-                    <p class="ps-5 pe-5 opacity-75">Podes pagar con Tarjeta Visa Débito, Tarjeta MasterCard débito, Tarjeta Naranja X y en efectivo.</p>
-                </div>
-            </div>
-            <div class="col">
-                <div>
-                    <img src="assets/img/envio.svg" alt="Envio" width="80px" height="80px" class="contenedor__div-img-1-index">
+                    <img src="<?= base_url('assets/img/envio.svg'); ?>" alt="Envio" width="80px" height="80px" class="contenedor__div-img-1-index">
                 </div>
                 <div>
                     <h5><b>Envío gratis</b></h5>
@@ -297,7 +288,7 @@
             </div>
             <div class="col">
                 <div>
-                    <img src="assets/img/seguridad.svg" alt="Seguridad" width="80px" height="80px" class="contenedor__div-img-1-index">
+                    <img src="<?= base_url('assets/img/seguridad.svg'); ?>" alt="Seguridad" width="80px" height="80px" class="contenedor__div-img-1-index">
                 </div>
                 <div>
                     <h5><b>Seguridad, de principio a fin</b></h5>

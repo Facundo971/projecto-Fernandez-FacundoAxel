@@ -5,7 +5,7 @@
 
 <main class="conteiner__form-altaDeMarcas">
     <div class="bg-light rounded-2 pt-3 pb-4">
-        <h1 class="text-center mb-3">Agregar Marcas</h1>
+        <h1 class="text-center mb-3">Agregar Marca</h1>
 
         <?php if(session()->getFlashdata('msgExitoso')): ?>
             <div class="text-center mt-2">
@@ -18,10 +18,10 @@
             <?= csrf_field() ?> 
             <div class="row mt-3">
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="marca"><b>Descripción de la Marca</b></label>      
+                    <label for="marca"><b>Descripción</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="text" id="marca" name="marca" placeholder="Ingrese la descripción..." value="<?= esc($valorMarcaDescripcion); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" id="marca" name="marca" placeholder="Ingrese la descripción de una marca..." value="<?= esc($valorMarcaDescripcion); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('marca')) {?> 
                     <div class="text-center mt-2"> 

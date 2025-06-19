@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\Categoria_model;
+use App\Models\Marca_model;
 use App\Models\Usuarios_model;
 use CodeIgniter\Controller;
 
@@ -13,12 +14,14 @@ class Login_controller extends Controller{
     public function inicioSesion(){
         $categoriaModel = new Categoria_model();
         $dato['categorias'] = $categoriaModel->getCategoriaAll();
+        $marcaModel = new Marca_model();
+        $dato['marcas'] = $marcaModel->getMarcaAll();
 
         $data['titulo'] = 'NetShop | Inicio de Sesion';
         echo view('plantillas/header', $data);
         echo view('plantillas/nav', $dato);
         echo view('back/usuario/inicioSesion');
-        echo view('plantillas/footer');
+        echo view('plantillas/footer', $dato);
     }
 
     public function formValidation(){
@@ -35,7 +38,7 @@ class Login_controller extends Controller{
             $ba = $data['baja'];
 
             if($ba == 'SI'){
-                $session->setFlashdata('msgUser', 'El Usuario esta dado de Baja');
+                $session->setFlashdata('msgUser', 'El usuario esta dado de baja');
                 return redirect()->to('/inicioSesion');
             }
 

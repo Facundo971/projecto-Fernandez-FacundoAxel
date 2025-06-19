@@ -5,6 +5,7 @@ use App\Models\Categoria_model;
 use CodeIgniter\Controller; 
 use App\Models\Producto_model;
 use App\Models\Consulta_model;
+use App\Models\Marca_model;
 
 class Consulta_controller extends Controller{
     public function __construct(){
@@ -47,6 +48,17 @@ class Consulta_controller extends Controller{
         return redirect()->to('/mostrarListaConsultas');
     }
 
+    public function eliminarConsulta($id){
+        $consultaModel = new Consulta_model();
+        $data['consulta'] = $consultaModel->find($id);
+
+        $data = ['baja' => 'SI'];
+        $consultaModel->update($id, $data);
+
+        session()->setFlashdata('msgExitoso', 'Consulta eliminada exitosamente');
+        return redirect()->to('/mostrarListaConsultas');
+    }
+
     public function formValidation(){
         $session = session();
         $consultaNombre = $this->request->getVar('nombre');
@@ -60,7 +72,7 @@ class Consulta_controller extends Controller{
             'nombre' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'apellido' => 'required|trim|regex_match[/^([\p{L}\s])+$/u]|min_length[2]|max_length[50]',
             'dni' => 'required|trim|max_length[8]|is_natural|',
-            'telefono' => 'required|trim|max_length[11]|is_natural',
+            'telefono' => 'required|trim|max_length[10]|is_natural',
             'email' => 'required|trim|valid_email|max_length[320]',
             'consulta' => 'required|trim|min_length[2]|max_length[500]'
         ]);
@@ -70,6 +82,8 @@ class Consulta_controller extends Controller{
         if(!$input){
             $categoriaModel = new Categoria_model();
             $data['categorias'] = $categoriaModel->getCategoriaAll();
+            $marcaModel = new Marca_model();
+            $data['marcas'] = $marcaModel->getMarcaAll();
 
             $session->setFlashdata('consultaNombreValor', $consultaNombre);
             $session->setFlashdata('consultaApellidoValor', $consultaApellido);
@@ -82,7 +96,7 @@ class Consulta_controller extends Controller{
             echo view('plantillas/header', $data);
             echo view('plantillas/nav', $data);
             echo view('plantillas/consultas', ['validation' => $this->validator]);
-            echo view('plantillas/footer');
+            echo view('plantillas/footer', $data);
         } else {
             $formModel->save([
                 'nombre' => $this->request->getVar('nombre'),
@@ -93,7 +107,7 @@ class Consulta_controller extends Controller{
                 'consulta' => $this->request->getVar('consulta')
             ]);
 
-            session()->setFlashdata('msgExitoso', 'Consulta enviada con éxito!');
+            session()->setFlashdata('msgExitoso', 'Consulta enviada exitosamente');
 
             return redirect()->to('/consultas');
         }

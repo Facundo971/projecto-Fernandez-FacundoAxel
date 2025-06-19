@@ -26,9 +26,9 @@
         </form>
     </div>
     <div class="bg-white rounded-2">
-        <h1 class="text-center pt-2">Lista de Usuarios Desactivados</h1>
+        <h1 class="text-center pt-2">Lista de Usuarios no Habilitados</h1>
         <div class="d-flex justify-content-end pb-2 pe-2">
-            <a href= "<?php echo base_url('mostrarListaUsuariosActualizarEliminar'); ?>" class="btn btn-primary text-white rounded-2"><b>Volver</b></a>
+            <a href= "<?php echo base_url('mostrarListaUsuariosActualizarEliminar'); ?>" class="btn btn-secondary text-white rounded-2"><b>Volver</b></a>
         </div>
         <?php if(session()->getFlashdata('msgExitoso')): ?>
             <div class="text-center mt-2">
@@ -47,7 +47,7 @@
                     <p class="mb-0"><b>Perfil</b></p>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
-                    <p class="mb-0"><b>Activar</b></p>
+                    <p class="mb-0"><b>Habilitar</b></p>
                 </div>
             </div>
             <?php if($boleano == false): ?>
@@ -72,7 +72,7 @@
                                 <p class="mb-0"><?php echo $usuario['perfiles_descripcion']; ?></p>
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 pb-3 pt-3 border-end d-flex justify-content-center align-items-center">
-                                <a href= "<?php echo base_url('activarUsuarios/' . $usuario['id_usuario']); ?>" class="btn btn-primary text-white rounded-2"><b>Activar</b></a>
+                                <a href= "<?php echo base_url('activarUsuarios/' . $usuario['id_usuario']); ?>" class="btn btn-primary text-white rounded-2"><b>Habilitar</b></a>
                             </div>
                         </div>
                     <?php endif; ?>

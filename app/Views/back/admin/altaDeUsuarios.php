@@ -10,7 +10,7 @@
 
 <main class="conteiner__form-altaDePerfiles">
     <div class="bg-light rounded-2 pt-3 pb-4">
-        <h1 class="text-center mb-3">Agregar Usuarios</h1>
+        <h1 class="text-center mb-3">Agregar Usuario</h1>
         <?php if(session()->getFlashdata('msgExitoso')): ?>
             <div class="text-center mt-2">
                 <p class="fs-5 text-white"><b class="p-1 bg-success bg-opacity-75 rounded-2"><?= session()->getFlashdata('msgExitoso'); ?></b></p>
@@ -46,10 +46,10 @@
                 <?php }?>
 
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="email"><b>Correo Electronico</b></label>      
+                    <label for="email"><b>Correo Electrónico</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="email" id="email" name="email" placeholder="Ingrese el correo..." value="<?= esc($valorUsuarioEmail); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="email" id="email" name="email" placeholder="Ingrese el correo..." value="<?= esc($valorUsuarioEmail); ?>" title="Debe ser un correo válido de Gmail (por ejemplo, usuario@gmail.com)" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('email')) {?> 
                     <div class="text-center mt-2"> 
@@ -73,7 +73,7 @@
                     <label for="contraseña"><b>Contraseña</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese la contraseña..." value="<?= esc($valorUsuarioContraseña); ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese la contraseña..." value="<?= esc($valorUsuarioContraseña); ?>" title="Debe contener al menos una letra mayúscula, un número y un carácter especial (@$!%*?&)" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('contraseña')) {?> 
                     <div class="text-center mt-2"> 
@@ -103,7 +103,7 @@
             </div>
 
             <div class="mt-3 d-flex justify-content-center"> 
-                <input type="submit" value="Agregar" class="text-white w-25 rounded-2 conteiner__form-div-input-agregarCancelar">
+                <input type="submit" value="Agregar" class="text-white w-25 me-5 rounded-2 conteiner__form-div-input-agregarCancelar">
                 <a href= "<?php echo base_url('limpiarUsuarioUser'); ?>" class="w-25 ms-3 btn btn-danger text-white rounded-2"><b>Borrar</b></a>
             </div>
         </form>

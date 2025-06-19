@@ -1,6 +1,6 @@
 <main class="conteiner__form-altaDeCategorias">
     <div class="bg-light rounded-2 pt-3 pb-4">
-        <h1 class="text-center mb-3">Editar Categorias</h1>
+        <h1 class="text-center mb-3">Editar Categoria</h1>
         <?php $validation = \Config\Services::validation() ?>
         <form action="<?php echo base_url('enviar-formCategoriaActualizar'); ?>" method="POST">
             <?= csrf_field() ?> 
@@ -11,10 +11,10 @@
                 </div>
 
                 <div class="col-12 mt-2 d-flex justify-content-center">
-                    <label for="categoria"><b>Descripcion de la Categoria</b></label>      
+                    <label for="categoria"><b>Descripción</b></label>      
                 </div>
                 <div class="col-12 mt-2 d-flex justify-content-center ps-5 pe-5">
-                    <input type="text" id="categoria" name="categoria" placeholder="Ingrese el nombre de la categoria..." value="<?= session()->getFlashdata('limpiarCategoriaValor') ? '' : $categoria['descripcion'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
+                    <input type="text" id="categoria" name="categoria" placeholder="Ingrese la descripción de la categoria..." value="<?= session()->getFlashdata('limpiarCategoriaValor') ? '' : $categoria['descripcion'] ?>" class="w-100 ps-2 pe-2 pt-1 pb-1 border shadow">
                 </div>
                 <?php if($validation->getError('categoria')) {?> 
                     <div class="text-center mt-2"> 
